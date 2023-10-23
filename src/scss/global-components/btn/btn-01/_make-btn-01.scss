@@ -1,0 +1,19 @@
+@mixin make-btn-01(
+    $border-options: (),
+    $background-options: (),
+    $hover-options: (),
+) {
+    @include make-border-options($options: $border-options);
+    @include make-background-options($options: $background-options);
+    @include make-hover-options($options: $hover-options);
+    
+    display: inline-block;
+    padding: $measure $measure * 3;
+    text-align: center;
+    text-decoration: none;
+
+    @media all and ($viewport-type: $mobile) {
+        display: block;
+        width: 100%;
+    }
+}

@@ -1,2 +1,8 @@
 
 @import './framework/components/card/c--card-a.scss';
+
+// * global components
+@import './global-components/_global-mixins/index';
+@import './global-components/mixins.scss';
+
+@import './global-components/btn/btn-01/g--btn-01';

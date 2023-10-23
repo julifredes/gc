@@ -1,0 +1,16 @@
+@mixin make-border-options($options) {
+    $border-options: (
+        "border-color": null,
+        "border-radius": null,
+        "border-style": null,
+        "border-width": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($border-options, $property) {
+            @if $value {
+                #{$property}: $value;
+            }
+        }
+    }
+}
