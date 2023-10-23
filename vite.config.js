@@ -20,6 +20,8 @@ export default defineConfig({
       }
     }
   },
+  
+  // assetspublicpath: '/static/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
