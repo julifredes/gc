@@ -1,4 +1,3 @@
 
-import MyClass from '../MyClass.ts';
-new MyClass() 
+console.log('nothing to add here')
 
