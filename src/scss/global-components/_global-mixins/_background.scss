@@ -10,11 +10,13 @@
 
     @each $property, $value in $options {
         @if map-has-key($background-options, $property) {
-            @if $property ==  "background-class"{
-                @extend .#{$value} !optional;
-            }
-            @else if $value {
-                #{$property}: $value;
+            @if $value {
+                @if $property ==  "background-class"{
+                    @extend .#{$value} !optional;
+                }
+                @else {
+                    #{$property}: $value;
+                }
             }
         }
     }
