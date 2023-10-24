@@ -14,11 +14,11 @@
                 @if $property == "text-class" {
                     @if type-of($value) == list {
                         @each $class in $value {
-                            @extend .#{$class} !optional;
+                            @extend .#{$class};
                         }
                     }
                     @else {
-                        @extend .#{$value} !optional;
+                        @extend .#{$value};
                     }
                 }
                 @else if $property ==  "max-lines" {

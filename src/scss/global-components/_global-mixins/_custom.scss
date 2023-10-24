@@ -1,15 +1,25 @@
 @mixin make-custom-options($options) {
-    @each $selector, $properties in $options {
-      @if $selector {
-        #{$selector} {
-          @each $property, $value in $properties {
+  @each $selector, $properties in $options {
+    @if $selector {
+      #{$selector} {
+        @each $property, $value in $properties {
+          @if $property {
             #{$property}: $value;
           }
+          @else {
+            @extend .#{$value};
+          }
         }
-      } @else {
-        @each $property, $value in $properties {
+      }
+    } @else {
+      @each $property, $value in $properties {
+        @if $property {
           #{$property}: $value;
+        }
+        @else {
+          @extend .#{$value};
         }
       }
     }
   }
+}

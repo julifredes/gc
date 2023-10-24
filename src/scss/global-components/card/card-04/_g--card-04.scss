@@ -13,7 +13,7 @@
             "border-style": solid,
         ),
         $media-options: (
-            "aspect-ratio": (1 / 1),
+            "aspect-ratio": 1,
             "width": 50%,
             "object-fit": cover,
             "object-position": center
@@ -38,8 +38,12 @@
             "background-size": (0, 100%),
         ),
         $custom-options: (
+            null: (
+                null: f--background-a
+            ),
             "&__item-primary": (
                 background: red,
+                null: f--col-12,
             )
         ),
     );

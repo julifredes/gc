@@ -12,7 +12,7 @@
         @if map-has-key($background-options, $property) {
             @if $value {
                 @if $property ==  "background-class"{
-                    @extend .#{$value} !optional;
+                    @extend .#{$value};
                 }
                 @else {
                     #{$property}: $value;
