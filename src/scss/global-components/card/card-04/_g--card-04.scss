@@ -1,0 +1,34 @@
+.g--card-04 {
+    @include make-card-04();
+    @include make-card-04-modifier(
+        $background-options: (
+            "background-color": white,
+        ),
+        $border-options: (
+            "border-color": red,
+            "border-width": 1px,
+            "border-style": solid,
+        ),
+        $item-primary-options: (
+            "text-class": f--font-d,
+        ),
+        $item-primary-hover-options: (
+            "color": blue,
+        ),
+        $item-secondary-options: (
+            "text-class": f--font-e,
+        ),
+        $item-tertiary-options: (
+            "text-class": g--btn-01,
+        ),
+        $item-tertiary-hover-options: (
+            "border-radius": 30px,
+            "background-image": linear-gradient(blue, chocolate),
+        ),
+        $custom-options: (
+            "&__item-primary": (
+                background: red,
+            )
+        ),
+    );
+}

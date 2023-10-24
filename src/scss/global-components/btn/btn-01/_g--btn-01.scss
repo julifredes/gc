@@ -15,12 +15,17 @@
             "border-radius": 30px,
             "background-image": linear-gradient(blue, chocolate),
         ),
-        $text-options: (
-            "font-class": f--font-d,
-            // "background-image": linear-gradient(blue, chocolate),
+        $font-options: (
+            "text-class": (
+                f--font-d,
+                f--color-b
+            ),
+            "font-weight": 700,
         ),
         $custom-options: (
-            width: 300px,
+            null: (
+                width: 100%,
+            )
         ),
     );
 }

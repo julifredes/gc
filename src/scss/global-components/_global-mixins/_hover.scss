@@ -1,29 +1,35 @@
-@mixin make-hover-options($options) {
-    $hover-options: (
-        "background-color": null,
-        "background-image": null,
-        "background-position": null,
-        "background-size": null,
-        "border-color": null,
-        "border-radius": null,
-        "box-shadow": null,
-    );
+$hover-options: (
+    "background-color": null,
+    "background-image": null,
+    "background-position": null,
+    "background-size": null,
+    "border-color": null,
+    "border-radius": null,
+    "box-shadow": null,
+    "color": null,
+);
 
+@mixin make-hover-interaction($options) {
+    @each $property, $value in $options {
+        @if map-has-key($hover-options, $property) {
+            @if $value {
+                #{$property}: $value;
+            }
+        }
+    }
+}
+
+@mixin make-hover-transition($options) {
     $hover-transition-list: ();
-
     @each $property, $value in $options {
         @if map-has-key($hover-options, $property) {
             @if $value {
                 $transition: unquote("#{$property} #{$time-b} #{$ease-standard-a}");
                 $hover-transition-list: append($hover-transition-list, $transition, $separator: comma);
-                @media all and (hover: hover) {
-                    &:hover,
-                    &:active {
-                        #{$property}: $value;
-                    }
-                }
             }
         }
     }
-    transition: $hover-transition-list;
+    @if $options != () {
+        transition: $hover-transition-list;
+    }
 }

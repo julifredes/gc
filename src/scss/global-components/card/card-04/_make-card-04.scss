@@ -1,0 +1,99 @@
+@mixin make-card-04() {
+    padding: $measure * 7 $measure * 5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    &__media-wrapper {
+        overflow: hidden;
+        margin-bottom: $measure * 2;
+        &__media {
+            display: block;
+            @media all and ($viewport-type: $tablets) {
+                margin-bottom: $measure;
+            }
+        }
+    }
+
+    &__item-primary {
+        margin-bottom: $measure * 2;
+        @media all and ($viewport-type: $tablets) {
+            margin-bottom: $measure;
+        }
+    }
+
+    &__item-secondary {
+        margin-bottom: $measure * 2;
+        @media all and ($viewport-type: $tablets) {
+            margin-bottom: $measure;
+        }
+    }
+    &__item-tertiary {
+        margin-top: auto;
+    }
+}
+
+@mixin make-card-04-modifier(
+    $background-options: (),
+    $border-options: (),
+    $hover-options: (),
+    $shadow-options: (),
+    $item-primary-options: (),
+    $item-primary-hover-options: (),
+    $item-secondary-options: (),
+    $item-secondary-hover-options: (),
+    $item-tertiary-options: (),
+    $item-tertiary-hover-options: (),
+    $custom-options: (),
+    // $selector: (),
+) {
+    @include make-background-options($options: $background-options);
+    @include make-border-options($options: $border-options);
+    @include make-shadow-options($options: $shadow-options);
+    @include make-hover-transition($options: $hover-options);
+    .g--card-04 {
+        &__media-wrapper {
+            &__media {
+            }
+        }
+        &__item-primary {
+            @include make-font-options($options: $item-primary-options);
+            @include make-hover-transition($options: $item-primary-hover-options);
+        }
+    
+        &__item-secondary {
+            @include make-font-options($options: $item-secondary-options);
+            @include make-hover-transition($options: $item-secondary-hover-options);
+        }
+        &__item-tertiary {
+            @include make-font-options($options: $item-tertiary-options);
+            @include make-hover-transition($options: $item-tertiary-hover-options);
+        }
+    }
+
+    @media all and (hover: hover) {
+        &:hover,
+        &:active {
+            @include make-hover-interaction($options: $hover-options);
+            .g--card-04 {
+                &__media-wrapper {
+                    &__media {
+                    }
+                }
+                &__item-primary {
+                    @include make-hover-interaction($options: $item-primary-hover-options);
+                }
+            
+                &__item-secondary {
+                    @include make-hover-interaction($options: $item-secondary-hover-options);
+                }
+                &__item-tertiary {
+                    @include make-hover-interaction($options: $item-tertiary-hover-options);
+                }
+            }
+        }
+    }
+    
+    @include make-custom-options($options: $custom-options);
+}

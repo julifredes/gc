@@ -1,7 +1,15 @@
 @mixin make-custom-options($options) {
-    @each $property, $value in $options {
-        @if $value {
+    @each $selector, $properties in $options {
+      @if $selector {
+        #{$selector} {
+          @each $property, $value in $properties {
             #{$property}: $value;
+          }
         }
+      } @else {
+        @each $property, $value in $properties {
+          #{$property}: $value;
+        }
+      }
     }
-}
+  }

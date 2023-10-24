@@ -16,14 +16,23 @@
     $border-options: (),
     $hover-options: (),
     $shadow-options: (),
-    $text-options: (),
+    $font-options: (),
     $custom-options: (),
+    // $selector: (),
 ) {
     @include make-background-options($options: $background-options);
     @include make-border-options($options: $border-options);
-    @include make-hover-options($options: $hover-options);
     @include make-shadow-options($options: $shadow-options);
-    @include make-text-options($options: $text-options);
-    
+    @include make-font-options($options: $font-options);
+    @include make-hover-transition($options: $hover-options);
+
     @include make-custom-options($options: $custom-options);
+
+
+    @media all and (hover: hover) {
+        &:hover,
+        &:active {
+            @include make-hover-interaction($options: $hover-options);
+        }
+    }
 }
