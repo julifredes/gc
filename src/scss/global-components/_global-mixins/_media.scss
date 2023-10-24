@@ -1,0 +1,33 @@
+@mixin make-media-options($options) {
+    $media-options: (
+        "aspect-ratio": null,
+        "object-fit": null,
+        "height": null,
+        "object-position": null,
+        "width": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($media-options, $property) {
+            @if $value {
+                @if $property == "aspect-ratio" or $property == "object-fit" or $property == "object-position" {
+                    &__media {
+                        #{$property}: $value;
+                    }
+                }
+                @else if $property == "height" or $property == "width" {
+                    #{$property}: $value;
+                    &__media {
+                        #{$property}: 100%;
+                    }
+                }
+                @else {
+                    #{$property}: $value;
+                    &__media {
+                        #{$property}: $value;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,8 @@ $hover-options: (
     "border-radius": null,
     "box-shadow": null,
     "color": null,
+    "transform": null,
+    "text-decoration-color": null,
 );
 
 @mixin make-hover-interaction($options) {

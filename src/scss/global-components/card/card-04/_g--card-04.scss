@@ -1,6 +1,9 @@
 .g--card-04 {
     @include make-card-04();
     @include make-card-04-modifier(
+        $card-options: (
+            // "align": center,
+        ),
         $background-options: (
             "background-color": white,
         ),
@@ -8,6 +11,15 @@
             "border-color": red,
             "border-width": 1px,
             "border-style": solid,
+        ),
+        $media-options: (
+            "aspect-ratio": (1 / 1),
+            "width": 50%,
+            "object-fit": cover,
+            "object-position": center
+        ),
+        $media-hover-options: (
+            "transform": scale(1.5),
         ),
         $item-primary-options: (
             "text-class": f--font-d,
@@ -23,7 +35,7 @@
         ),
         $item-tertiary-hover-options: (
             "border-radius": 30px,
-            "background-image": linear-gradient(blue, chocolate),
+            "background-size": (0, 100%),
         ),
         $custom-options: (
             "&__item-primary": (

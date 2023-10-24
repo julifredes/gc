@@ -3,8 +3,10 @@
     @include make-btn-01-modifier(
         $background-options: (
             "background-color": blue,
-            "background-image": linear-gradient(orange, chocolate),
-            "background-class": f--background-a,
+            "background-image": (linear-gradient(blue, chocolate), linear-gradient(blue, black)),
+            "background-repeat": no-repeat,
+            "background-size": (100%, 0),
+            "background-position": (left center, right center),
         ),
         $border-options: (
             "border-color": red,
@@ -13,7 +15,7 @@
         ),
         $hover-options: (
             "border-radius": 30px,
-            "background-image": linear-gradient(blue, chocolate),
+            "background-size": (0, 100%),
         ),
         $font-options: (
             "text-class": (

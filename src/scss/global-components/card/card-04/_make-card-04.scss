@@ -37,24 +37,36 @@
 @mixin make-card-04-modifier(
     $background-options: (),
     $border-options: (),
+    $card-options: (),
+    $custom-options: (),
     $hover-options: (),
-    $shadow-options: (),
+
     $item-primary-options: (),
     $item-primary-hover-options: (),
+
     $item-secondary-options: (),
     $item-secondary-hover-options: (),
+
     $item-tertiary-options: (),
     $item-tertiary-hover-options: (),
-    $custom-options: (),
-    // $selector: (),
+
+    $media-border-options: (),
+    $media-hover-options: (),
+    $media-options: (),
+    
+    $shadow-options: (),
 ) {
+    @include make-card-options($options: $card-options);
     @include make-background-options($options: $background-options);
     @include make-border-options($options: $border-options);
     @include make-shadow-options($options: $shadow-options);
     @include make-hover-transition($options: $hover-options);
     .g--card-04 {
         &__media-wrapper {
+            @include make-media-options($options: $media-options);
             &__media {
+                @include make-border-options($options: $media-border-options);
+                @include make-hover-transition($options: $media-hover-options);
             }
         }
         &__item-primary {
@@ -79,6 +91,7 @@
             .g--card-04 {
                 &__media-wrapper {
                     &__media {
+                        @include make-hover-interaction($options: $media-hover-options);
                     }
                 }
                 &__item-primary {
