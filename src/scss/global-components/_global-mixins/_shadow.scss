@@ -1,0 +1,13 @@
+@mixin make-shadow-options($options) {
+    $shadow-options: (
+        "box-shadow": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($shadow-options, $property) {
+            @if $value {
+                #{$property}: $value;
+            }
+        }
+    }
+}

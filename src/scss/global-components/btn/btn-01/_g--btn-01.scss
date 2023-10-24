@@ -1,18 +1,26 @@
 .g--btn-01 {
-    @include make-btn-01(
+    @include make-btn-01();
+    @include make-btn-01-modifier(
         $background-options: (
-            background-color: blue,
-            background-image: linear-gradient(orange, chocolate),
-            background-class: f--background-a,
+            "background-color": blue,
+            "background-image": linear-gradient(orange, chocolate),
+            "background-class": f--background-a,
         ),
         $border-options: (
-            border-color: red,
-            border-width: 1px,
-            border-style: solid,
+            "border-color": red,
+            "border-width": 1px,
+            "border-style": solid,
         ),
         $hover-options: (
-            border-radius: 30px,
-            background-image: linear-gradient(blue, chocolate),
+            "border-radius": 30px,
+            "background-image": linear-gradient(blue, chocolate),
+        ),
+        $text-options: (
+            "font-class": f--font-d,
+            // "background-image": linear-gradient(blue, chocolate),
+        ),
+        $custom-options: (
+            width: 300px,
         ),
     );
 }

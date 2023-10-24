@@ -1,0 +1,7 @@
+@mixin make-custom-options($options) {
+    @each $property, $value in $options {
+        @if $value {
+            #{$property}: $value;
+        }
+    }
+}

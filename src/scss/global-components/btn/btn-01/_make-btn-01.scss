@@ -1,12 +1,5 @@
-@mixin make-btn-01(
-    $border-options: (),
-    $background-options: (),
-    $hover-options: (),
-) {
-    @include make-border-options($options: $border-options);
-    @include make-background-options($options: $background-options);
-    @include make-hover-options($options: $hover-options);
-    
+@mixin make-btn-01() {
+
     display: inline-block;
     padding: $measure $measure * 3;
     text-align: center;
@@ -16,4 +9,21 @@
         display: block;
         width: 100%;
     }
+}
+
+@mixin make-btn-01-modifier(
+    $background-options: (),
+    $border-options: (),
+    $hover-options: (),
+    $shadow-options: (),
+    $text-options: (),
+    $custom-options: (),
+) {
+    @include make-background-options($options: $background-options);
+    @include make-border-options($options: $border-options);
+    @include make-hover-options($options: $hover-options);
+    @include make-shadow-options($options: $shadow-options);
+    @include make-text-options($options: $text-options);
+    
+    @include make-custom-options($options: $custom-options);
 }

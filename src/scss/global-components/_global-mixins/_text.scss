@@ -1,0 +1,31 @@
+@mixin make-text-options($options) {
+    $text-options: (
+        "color": null,
+        "color-class": null,
+        "font-class": null,
+        "font-size": null,
+        "font-weight": null,
+        "font-weight-class": null,
+        "max-lines": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($text-options, $property) {
+            @if $value {
+                @if $property ==  "color-class" or $property ==  "font-class" or $property ==  "font-weight-class" {
+                    @extend .#{$value} !optional;
+                }
+                @else if $property ==  "max-lines" {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: $value;
+                    -webkit-box-orient: vertical;
+                }
+                @else {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+}
