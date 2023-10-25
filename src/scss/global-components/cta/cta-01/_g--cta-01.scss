@@ -55,12 +55,15 @@
                 // "align": center,
             ),
             $custom-options: (
-                // null: (
-                //     null: f--background-a
-                // ),
+                "parent": (
+                    class: f--background-a
+                ),
                 ".g--cta-01__artwork": (
-                    // background-color: map-get($color-options, d)
-                    class: f--background-e,
+                    // class: f--background-e u--display-block,
+                    class: (
+                        f--background-e,
+                        u--display-block
+                    ),
                 )
             ),
         );

@@ -8,7 +8,14 @@
               #{$property}: $value;
             }
             @else {
-              @extend .#{$value};
+              @if type-of($value) == list {
+                @each $class in $value {
+                  @extend .#{$class};
+                }
+              }
+              @else {
+                @extend .#{$value};
+              }
             }
           }
         }
@@ -19,7 +26,14 @@
             #{$property}: $value;
           }
           @else {
-            @extend .#{$value};
+            @if type-of($value) == list {
+              @each $class in $value {
+                @extend .#{$class};
+              }
+            }
+            @else {
+              @extend .#{$value};
+            }
           }
         }
       }

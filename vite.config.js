@@ -35,6 +35,7 @@ export default defineConfig({
           @import "./src/scss/framework/_vars/_vars.scss";
           @import "./src/scss/framework/_mixins/_mixins.scss";
           @import "./src/scss/framework/foundation/foundation.scss";
+          @import "./src/scss/framework/utilities/utilities.scss";
         ` 
       }  
     }

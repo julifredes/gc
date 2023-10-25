@@ -38,6 +38,11 @@
             "background-size": (0, 100%),
         ),
         $custom-options: (
+            // "parent": (
+            //     background: red,
+            //     max-width: 400px,
+            //     class: f--col-12,
+            // ),
             "&__item-primary": (
                 background: red,
                 class: f--col-12,
