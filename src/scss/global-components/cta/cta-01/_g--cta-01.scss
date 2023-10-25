@@ -2,8 +2,8 @@
     @include make-cta-01();
     @include make-cta-01-modifier(
         $cta-options: (
-            "container": yes,
-            "columns-class": (
+            // "container": yes,
+            "container": (
                 f--col-10,
                 f--col-tablets-12
             )

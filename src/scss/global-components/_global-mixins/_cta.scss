@@ -2,11 +2,8 @@
     $cta-options: (
         "align": null,
         "container": null,
-        "columns-class": null,
         "min-height": null,
     );
-
-    // $container-classes: ();
 
     @each $property, $value in $options {
         @if map-has-key($cta-options, $property) {
@@ -32,38 +29,39 @@
                     }
                 }
                 @else if $property == "container" {
-                    @if $value == "yes" {
+                    @if $value == "no" {
+                        &__wrapper {
+                            width: 100%;
+                            padding: $measure*15 $measure*10;
+                            &__content {
+                                max-width: 100%;
+                                width: 100%;
+                                flex: none;
+                            }
+                        }
+                    }
+                    @else {
                         &__wrapper {
                             @extend .f--container;
                             @extend .f--row;
                             @extend .f--row--remove-gutter;
                             padding-top: $measure*20;
                             padding-bottom: $measure*20;
-                        }
-                    }
-                    @else if $value == "no" {
-                        &__wrapper {
-                            width: 100%;
-                            padding: $measure*15 $measure*10;
                             &__content {
-                                max-width: 100%;
-                            }
-                        }
-                    }
-                }
-                @else if $property == "columns-class" {
-                    &__wrapper {
-                        &__content {
-                            @if type-of($value) == list {
-                                @each $class in $value {
-                                    @extend .#{$class};
+                                @if type-of($value) == list {
+                                    @each $class in $value {
+                                        @extend .#{$class};
+                                    }
                                 }
+                                @else if $value{
+                                    @extend .#{$value};
+                                }
+                                @else {
+                                    @extend .f--col-8;
+                                }
+                                padding-left: 0;
+                                padding-right: 0;
                             }
-                            @else {
-                                @extend .#{$value};
-                            }
-                            padding-left: 0;
-                            padding-right: 0;
                         }
                     }
                 }
