@@ -6,6 +6,7 @@
         "background-repeat": null,
         "background-size": null,
         "background-position": null,
+        "background-overlay": null,
     );
 
     @each $property, $value in $options {
@@ -13,6 +14,23 @@
             @if $value {
                 @if $property ==  "background-class"{
                     @extend .#{$value};
+                }
+                @else if $property ==  "background-overlay"{
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: $value;
+                        z-index: 0;
+                    }
+                    & > * {
+                        position: relative;
+                        z-index: 1;
+                    }
                 }
                 @else {
                     #{$property}: $value;

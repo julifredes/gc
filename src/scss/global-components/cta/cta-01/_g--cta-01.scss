@@ -3,14 +3,18 @@
     @include make-cta-01-modifier(
         $cta-options: (
             "container": yes,
-            // "columns-class": (
-            //     f--col-10,
-            //     f--col-tablets-12
-            // )
+            "columns-class": (
+                f--col-10,
+                f--col-tablets-12
+            )
             // "align": center,
         ),
         $background-options: (
+            "background-image": url(https://picsum.photos/2000/500),
+            "background-repeat": no-repeat,
+            "background-size": cover,
             "background-color": rgb(62, 4, 4),
+            "background-overlay": rgba(155, 155, 155, .5),
         ),
         $border-options: (
             "border-color": red,
@@ -21,50 +25,35 @@
         $item-primary-options: (
             "text-class": f--font-d,
         ),
-        $item-primary-hover-options: (
-            "color": blue,
-        ),
 
         $item-secondary-options: (
-            "text-class": f--font-e,
+            "text-class": g--btn-01,
         ),
         
         $custom-options: (
-            "parent": (
-                position: relative
-            ),
-            "&__artwork": (
-                position: absolute,
-                left: 0,
-                top: 0,
-                background-color: pink,
-                width: 100%,
-                height: 100%
-                // null: f--background-b,
-            )
+            // "parent": (
+            //     position: relative
+            // )
         ),
     );
     &--second {
         @include make-cta-01-modifier(
+            $background-options: (
+                "background-image": none,
+                "background-overlay": transparent,
+            ),
             $cta-options: (
                 "container": no,
-                // "columns-class": (
-                //     f--col-10,
-                //     f--col-tablets-12
-                // )
+                "columns-class": (
+                    f--col-6,
+                    f--col-tablets-12
+                )
                 // "align": center,
             ),
             $custom-options: (
-                "parent": (
-                    class: f--background-a
-                ),
-                ".g--cta-01__artwork": (
-                    // class: f--background-e u--display-block,
-                    class: (
-                        f--background-e,
-                        u--display-block
-                    ),
-                )
+                // "parent": (
+                //     class: f--background-a
+                // )
             ),
         );
     }

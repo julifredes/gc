@@ -1,25 +1,10 @@
 @mixin make-cta-01() {
-    // display: block;
-    // padding: 8% 12%;
-    // text-align: center;
     width: 100%;
     display: flex;
     justify-content: center;
-
-    // @media all and ($viewport-type: $tabletl) {
-    //     padding: 12%;
-    // }
-
-    // @media all and ($viewport-type: $tabletm) {
-    //     padding: 9% 8%;
-    // }
-
-    // @media all and ($viewport-type: $mobile) {
-    //     padding: 11% 12%;
-    // }
     &__wrapper {
         &__content {
-            &__title {
+            &__item-primary {
                 margin-bottom: $measure * 6;
         
                 @media all and ($viewport-type: $tablets) {
@@ -27,10 +12,7 @@
                 }
             }
         
-            &__btn {
-                // margin-left: auto;
-                // margin-right: auto;
-            }
+            &__item-secondary {}
         }
     }
 }

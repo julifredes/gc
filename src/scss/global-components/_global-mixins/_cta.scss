@@ -6,6 +6,8 @@
         "min-height": null,
     );
 
+    // $container-classes: ();
+
     @each $property, $value in $options {
         @if map-has-key($cta-options, $property) {
             @if $value {
@@ -16,13 +18,13 @@
                             justify-content: flex-start;
                         }
                     }
-                    @if $value == "center" {
+                    @else if $value == "center" {
                         text-align: center;
                         &__wrapper {
                             justify-content: center;
                         }
                     }
-                    @if $value == "right" {
+                    @else if $value == "right" {
                         text-align: right;
                         &__wrapper {
                             justify-content: flex-end;
@@ -35,32 +37,33 @@
                             @extend .f--container;
                             @extend .f--row;
                             @extend .f--row--remove-gutter;
-                            // display: flex;
-                            // flex-wrap: wrap;
                             padding-top: $measure*20;
                             padding-bottom: $measure*20;
-                            &__content {
-                            //     @if $columns-class != null {
-                            //         @if type-of($columns-class) == list {
-                            //             @each $class in $columns-class {
-                            //                 @extend .#{$class};
-                            //             }
-                            //         }
-                            //         @else {
-                            //             @extend .#{$columns-class};
-                            //         }
-                            //     }
-                            //     @else {
-                                    @extend .f--col-8;
-                                    // padding-left: 0;
-                                    // padding-right: 0;
-                                }
-                            // }
                         }
                     }
                     @else if $value == "no" {
                         &__wrapper {
+                            width: 100%;
                             padding: $measure*15 $measure*10;
+                            &__content {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                }
+                @else if $property == "columns-class" {
+                    &__wrapper {
+                        &__content {
+                            @if type-of($value) == list {
+                                @each $class in $value {
+                                    @extend .#{$class};
+                                }
+                            }
+                            @else {
+                                @extend .#{$value};
+                            }
+                            padding-left: 0;
+                            padding-right: 0;
                         }
                     }
                 }
