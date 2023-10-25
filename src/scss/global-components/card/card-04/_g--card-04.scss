@@ -38,12 +38,9 @@
             "background-size": (0, 100%),
         ),
         $custom-options: (
-            null: (
-                null: f--background-a
-            ),
             "&__item-primary": (
                 background: red,
-                null: f--col-12,
+                class: f--col-12,
             )
         ),
     );

@@ -1,9 +1,21 @@
 @mixin make-custom-options($options) {
   @each $selector, $properties in $options {
     @if $selector {
-      #{$selector} {
+      @if $selector != "parent" {
+        #{$selector} {
+          @each $property, $value in $properties {
+            @if $property != "class" {
+              #{$property}: $value;
+            }
+            @else {
+              @extend .#{$value};
+            }
+          }
+        }
+      }
+      @else {
         @each $property, $value in $properties {
-          @if $property {
+          @if $property != "class" {
             #{$property}: $value;
           }
           @else {
@@ -11,15 +23,7 @@
           }
         }
       }
-    } @else {
-      @each $property, $value in $properties {
-        @if $property {
-          #{$property}: $value;
-        }
-        @else {
-          @extend .#{$value};
-        }
-      }
+      
     }
   }
 }

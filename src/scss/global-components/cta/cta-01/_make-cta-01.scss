@@ -1,0 +1,95 @@
+@mixin make-cta-01() {
+    // display: block;
+    // padding: 8% 12%;
+    // text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    // @media all and ($viewport-type: $tabletl) {
+    //     padding: 12%;
+    // }
+
+    // @media all and ($viewport-type: $tabletm) {
+    //     padding: 9% 8%;
+    // }
+
+    // @media all and ($viewport-type: $mobile) {
+    //     padding: 11% 12%;
+    // }
+    &__wrapper {
+        &__content {
+            &__title {
+                margin-bottom: $measure * 6;
+        
+                @media all and ($viewport-type: $tablets) {
+                    margin-bottom: $measure * 4;
+                }
+            }
+        
+            &__btn {
+                // margin-left: auto;
+                // margin-right: auto;
+            }
+        }
+    }
+}
+
+@mixin make-cta-01-modifier(
+    $background-options: (),
+    $border-options: (),
+    $cta-options: (),
+    $custom-options: (),
+    $hover-options: (),
+
+    $item-primary-options: (),
+    $item-primary-hover-options: (),
+
+    $item-secondary-options: (),
+    $item-secondary-hover-options: (),
+    
+    $shadow-options: (),
+) {
+    @include make-background-options($options: $background-options);
+    @include make-border-options($options: $border-options);
+    @include make-shadow-options($options: $shadow-options);
+    @include make-hover-transition($options: $hover-options);
+    .g--cta-01 {
+        @include make-cta-options($options: $cta-options);
+        &__wrapper {
+            &__content {
+                &__item-primary {
+                    @include make-font-options($options: $item-primary-options);
+                    @include make-hover-transition($options: $item-primary-hover-options);
+                }
+            
+                &__item-secondary {
+                    @include make-font-options($options: $item-secondary-options);
+                    @include make-hover-transition($options: $item-secondary-hover-options);
+                }
+            }
+        }
+    }
+
+    @media all and (hover: hover) {
+        &:hover,
+        &:active {
+            @include make-hover-interaction($options: $hover-options);
+            .g--cta-01 {
+                &__wrapper {
+                    &__content {
+                        &__item-primary {
+                            @include make-hover-interaction($options: $item-primary-hover-options);
+                        }
+                    
+                        &__item-secondary {
+                            @include make-hover-interaction($options: $item-secondary-hover-options);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @include make-custom-options($options: $custom-options);
+}

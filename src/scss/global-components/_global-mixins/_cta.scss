@@ -1,0 +1,73 @@
+@mixin make-cta-options($options) {
+    $cta-options: (
+        "align": null,
+        "container": null,
+        "columns-class": null,
+        "min-height": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($cta-options, $property) {
+            @if $value {
+                @if $property == "align" {
+                    @if $value == "left" {
+                        text-align: left;
+                        &__wrapper {
+                            justify-content: flex-start;
+                        }
+                    }
+                    @if $value == "center" {
+                        text-align: center;
+                        &__wrapper {
+                            justify-content: center;
+                        }
+                    }
+                    @if $value == "right" {
+                        text-align: right;
+                        &__wrapper {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+                @else if $property == "container" {
+                    @if $value == "yes" {
+                        &__wrapper {
+                            @extend .f--container;
+                            @extend .f--row;
+                            @extend .f--row--remove-gutter;
+                            // display: flex;
+                            // flex-wrap: wrap;
+                            padding-top: $measure*20;
+                            padding-bottom: $measure*20;
+                            &__content {
+                            //     @if $columns-class != null {
+                            //         @if type-of($columns-class) == list {
+                            //             @each $class in $columns-class {
+                            //                 @extend .#{$class};
+                            //             }
+                            //         }
+                            //         @else {
+                            //             @extend .#{$columns-class};
+                            //         }
+                            //     }
+                            //     @else {
+                                    @extend .f--col-8;
+                                    // padding-left: 0;
+                                    // padding-right: 0;
+                                }
+                            // }
+                        }
+                    }
+                    @else if $value == "no" {
+                        &__wrapper {
+                            padding: $measure*15 $measure*10;
+                        }
+                    }
+                }
+                @else {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+}
