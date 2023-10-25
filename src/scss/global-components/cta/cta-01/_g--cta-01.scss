@@ -14,7 +14,10 @@
             "background-repeat": no-repeat,
             "background-size": cover,
             "background-color": rgb(62, 4, 4),
-            "background-overlay": rgba(155, 155, 155, .5),
+            "background-overlay": (
+                // "background-size": cover,
+                "background-color": rgba(155, 155, 155, .5),
+            )
         ),
         $border-options: (
             "border-color": red,
