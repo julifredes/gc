@@ -38,6 +38,7 @@
             ),
             $artwork-options: (
                 "stroke": map-get($color-options, g),
+                "top": 4px
             ),
             $hover-options:
             (
