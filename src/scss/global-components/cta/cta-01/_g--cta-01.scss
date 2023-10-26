@@ -32,9 +32,9 @@
         $item-secondary-options: (
             "text-class": g--btn-01,
         ),
-        $item-list-options: (
+        $item-secondary-list-options: (
             2: (
-                "text-class": g--btn-01--ninth
+                "text-class": g--btn-01--second
             ),
             3: (
                 "text-class": g--btn-01--third
@@ -68,6 +68,17 @@
                 // "parent": (
                 //     class: f--background-a
                 // )
+            ),
+            $item-secondary-options: (
+                "text-class": g--btn-01--sixth,
+            ),
+            $item-secondary-list-options: (
+                2: (
+                    "text-class": g--btn-01--sixth
+                ),
+                3n: (
+                    "text-class": g--btn-01--ninth
+                ),
             ),
         );
     }

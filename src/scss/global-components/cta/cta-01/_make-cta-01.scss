@@ -30,7 +30,7 @@
     $item-secondary-options: (),
     $item-secondary-hover-options: (),
 
-    $item-list-options: (),
+    $item-secondary-list-options: (),
     
     $shadow-options: (),
 ) {
@@ -50,7 +50,7 @@
                     &__item-primary {
                         @include make-font-options($options: $item-secondary-options);
                         @include make-hover-transition($options: $item-secondary-hover-options);
-                        @include make-cta-item-list-modifier-options($options: $item-list-options);
+                        @include make-cta-item-list-modifier-options($options: $item-secondary-list-options);
                     }
                 }
             }
