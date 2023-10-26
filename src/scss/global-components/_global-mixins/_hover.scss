@@ -2,6 +2,7 @@ $hover-options: (
     "background-color": null,
     "background-image": null,
     "background-position": null,
+    "background-overlay": null,
     "background-size": null,
     "border-color": null,
     "border-radius": null,
@@ -15,7 +16,18 @@ $hover-options: (
     @each $property, $value in $options {
         @if map-has-key($hover-options, $property) {
             @if $value {
-                #{$property}: $value;
+                @if $property ==  "background-overlay"{
+                    &::before {
+                        @each $overlay-options, $overlay-value in $value {
+                            @if map-has-key($hover-options, $overlay-options) {
+                                #{$overlay-options}: $overlay-value;
+                            }
+                        }
+                    }
+                }
+                @else {
+                    #{$property}: $value;
+                }
             }
         }
     }
@@ -23,15 +35,33 @@ $hover-options: (
 
 @mixin make-hover-transition($options) {
     $hover-transition-list: ();
+    $hover-overlay-transition-list: ();
     @each $property, $value in $options {
         @if map-has-key($hover-options, $property) {
             @if $value {
-                $transition: unquote("#{$property} #{$time-b} #{$ease-standard-a}");
-                $hover-transition-list: append($hover-transition-list, $transition, $separator: comma);
+                @if $property ==  "background-overlay"{
+                    &::before {
+                        @each $overlay-options, $overlay-value in $value {
+                            $transition: unquote("#{$overlay-options} #{$time-b} #{$ease-standard-a}");
+                            $hover-overlay-transition-list: append($hover-overlay-transition-list, $transition, $separator: comma);
+                        }
+                    }
+                }
+                @else {
+                    $transition: unquote("#{$property} #{$time-b} #{$ease-standard-a}");
+                    $hover-transition-list: append($hover-transition-list, $transition, $separator: comma);
+                }
             }
         }
     }
     @if $options != () {
-        transition: $hover-transition-list;
+        @if $hover-overlay-transition-list !=  () {
+            &::before {
+                transition: $hover-overlay-transition-list;
+            }
+        }
+        @else {
+            transition: $hover-transition-list;
+        }
     }
 }
