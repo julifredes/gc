@@ -1,8 +1,11 @@
 @mixin make-font-options($options) {
     $font-options: (
         "color": null,
+        "font-family": null,
         "font-size": null,
         "font-weight": null,
+        "letter-spacing": null,
+        "line-height": null,
         "max-lines": null,
         "text-decoration-color": null,
         "text-class": null,
