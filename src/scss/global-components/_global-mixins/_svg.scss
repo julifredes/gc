@@ -1,0 +1,27 @@
+@mixin make-svg-options($options) {
+    $media-options: (
+        "fill": null,
+        "stroke": null,
+        "top": null,
+        "width": null,
+    );
+
+    @each $property, $value in $options {
+        @if map-has-key($media-options, $property) {
+            @if $value {
+                @if $property == "top" {
+                    position: relative;
+                    #{$property}: $value;
+                }
+                @else if $property == "width" {
+                    #{$property}: $value;
+                }
+                @else {
+                    * {
+                        #{$property}: $value;
+                    }
+                }
+            }
+        }
+    }
+}

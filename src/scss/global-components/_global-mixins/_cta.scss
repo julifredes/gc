@@ -15,9 +15,23 @@
 @mixin make-cta-item-list-modifier-options($options) {
     @each $value, $item-options, $item-hover-options in $options {
         @if $value {
-            &:nth-child(#{$value}) {
-                @include make-font-options($options: $item-options);
-                @include make-hover-transition($options: $item-hover-options);
+            @if $value == "first" {
+                &:first-child {
+                    @include make-font-options($options: $item-options);
+                    @include make-hover-transition($options: $item-hover-options);
+                }
+            }
+            @else if $value == "last" {
+                &:last-child {
+                    @include make-font-options($options: $item-options);
+                    @include make-hover-transition($options: $item-hover-options);
+                }
+            }
+            @else {
+                &:nth-child(#{$value}) {
+                    @include make-font-options($options: $item-options);
+                    @include make-hover-transition($options: $item-hover-options);
+                }
             }
         }
     }

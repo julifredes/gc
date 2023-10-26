@@ -1,35 +1,48 @@
-@mixin make-btn-01() {
+@mixin make-btn-02() {
 
-    display: inline-block;
-    padding: $measure $measure * 3;
-    text-align: center;
     text-decoration: none;
+    width: fit-content;
+    display: flex;
+    align-items: center;
 
-    @media all and ($viewport-type: $mobile) {
-        display: block;
-        width: 100%;
+    &__artwork {
+        height: auto;
+        margin-left: $measure;
     }
 }
 
-@mixin make-btn-01-modifier(
+@mixin make-btn-02-modifier(
+    $artwork-options: (),
+    $artwork-hover-options: (),
     $background-options: (),
     $border-options: (),
     $hover-options: (),
-    $shadow-options: (),
     $font-options: (),
     $custom-options: (),
 ) {
     @include make-background-options($options: $background-options);
     @include make-border-options($options: $border-options);
-    @include make-shadow-options($options: $shadow-options);
     @include make-font-options($options: $font-options);
     @include make-hover-transition($options: $hover-options);
+
+    .g--btn-02 {
+        &__artwork {
+            @include make-svg-options($options: $artwork-options);
+            @include make-hover-transition($options: $artwork-hover-options);
+        }
+    }
 
     @media all and (hover: hover) {
         &:hover,
         &:active {
             @include make-hover-interaction($options: $hover-options);
+            .g--btn-02 {
+                &__artwork {
+                    @include make-hover-interaction($options: $artwork-hover-options);
+                }
+            }
         }
     }
+
     @include make-custom-options($options: $custom-options);
 }
