@@ -1,7 +1,6 @@
 @mixin make-card-04() {
+    @include make-card-options(flex);
     padding: $measure * 7 $measure * 5;
-    width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-decoration: none;
@@ -56,7 +55,7 @@
     
     $shadow-options: (),
 ) {
-    @include make-card-options($options: $card-options);
+    @include make-card-modifier-options($options: $card-options);
     @include make-background-options($options: $background-options);
     @include make-border-options($options: $border-options);
     @include make-shadow-options($options: $shadow-options);

@@ -1,7 +1,5 @@
 @mixin make-cta-01() {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    @include make-cta-options();
     &__wrapper {
         &__content {
             &__item-primary {
@@ -11,8 +9,10 @@
                     margin-bottom: $measure * 4;
                 }
             }
-        
-            &__item-secondary {}
+            &__list-group {
+                @include make-cta-btn-list-options();
+                &__item-primary {}
+            }
         }
     }
 }
@@ -37,17 +37,18 @@
     @include make-shadow-options($options: $shadow-options);
     @include make-hover-transition($options: $hover-options);
     .g--cta-01 {
-        @include make-cta-options($options: $cta-options);
+        @include make-cta-modifier-options($options: $cta-options);
         &__wrapper {
             &__content {
                 &__item-primary {
                     @include make-font-options($options: $item-primary-options);
                     @include make-hover-transition($options: $item-primary-hover-options);
                 }
-            
-                &__item-secondary {
-                    @include make-font-options($options: $item-secondary-options);
-                    @include make-hover-transition($options: $item-secondary-hover-options);
+                &__list-group {
+                    &__item-primary {
+                        @include make-font-options($options: $item-secondary-options);
+                        @include make-hover-transition($options: $item-secondary-hover-options);
+                    }
                 }
             }
         }
@@ -63,9 +64,10 @@
                         &__item-primary {
                             @include make-hover-interaction($options: $item-primary-hover-options);
                         }
-                    
-                        &__item-secondary {
-                            @include make-hover-interaction($options: $item-secondary-hover-options);
+                        &__list-group {
+                            &__item-primary {
+                                @include make-hover-interaction($options: $item-secondary-hover-options);
+                            }
                         }
                     }
                 }

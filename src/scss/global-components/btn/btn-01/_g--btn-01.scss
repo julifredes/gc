@@ -2,23 +2,49 @@
     @include make-btn-01();
     @include make-btn-01-modifier(
         $background-options: (
-            "background-color": blue,
-            "background-image": (linear-gradient(blue, chocolate), linear-gradient(blue, black)),
+            "background-color": map-get($color-options, i),
+            "background-image": (
+                linear-gradient(
+                    90deg,
+                    map-get($color-options, i) 0%,
+                    map-get($color-options, h) 100%
+                ),
+                linear-gradient(
+                    90deg,
+                    map-get($color-options, h) 0%,
+                    map-get($color-options, i) 100%
+                ),
+            ),
             "background-repeat": no-repeat,
-            "background-size": (100%, 0),
-            "background-position": (left center, right center),
-            "background-class": f--background-a,
+            "background-size": (
+                100%,
+                0,
+            ),
+            "background-position": (
+                left center,
+                right center,
+            ),
+            // "background-class": f--background-a,
         ),
-        $border-options: (
-            "border-color": red,
-            "border-width": 1px,
-            "border-style": solid,
-            "border-radius": $measure*2,
-        ),
-        $hover-options: (
-            "border-radius": 30px,
-            "background-size": (0, 100%),
-        ),
+        // $border-options: (
+        //     "border-color":
+        //         linear-gradient(
+        //             90deg,
+        //             map-get($color-options, i) 0%,
+        //             map-get($color-options, h) 100%
+        //         ),
+        //     "border-width": 1px,
+        //     "border-style": solid,
+        //     "border-radius": $measure * 2,
+        // ),
+        $hover-options:
+            (
+                "border-radius": 30px,
+                "background-size": (
+                    0,
+                    100%,
+                ),
+            ),
         $font-options: (
             "text-class": (
                 f--font-d,
@@ -26,10 +52,236 @@
             ),
             "font-weight": 700,
         ),
-        $custom-options: (
-            "parent": (
-                width: 100%,
-            )
-        ),
+        // $custom-options: (
+        //     "parent": (
+        //         width: 100%,
+        //     ),
+        // )
     );
+
+    &--second {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": map-get($color-options, i),
+                "background-image": none,
+                "background-repeat": no-repeat,
+                "background-size": 0,
+            ),
+            $border-options: (
+                "border-color": transparent,
+                "border-width": 1px,
+                "border-style": solid,
+                "border-radius": 0,
+            ),
+            $hover-options: (
+                "background-color": transparent,
+                "border-color": map-get($color-options, i),
+                "border-radius": $measure * 4,
+                "background-size": 0,
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                    f--color-b,
+                ),
+                "font-weight": 300,
+            ),
+            // $custom-options: (
+            //     "parent": (
+            //         width: 100%,
+            //     ),
+            // )
+        );
+    }
+
+    &--third {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": transparent,
+                "background-image": (
+                    linear-gradient(map-get($color-options, e), map-get($color-options, e)),
+                    linear-gradient(map-get($color-options, g), map-get($color-options, i)),
+                ),
+                "background-repeat": no-repeat,
+                "background-size": (
+                    calc(100% - 4px) calc(100% - 4px),
+                    100%,
+                ),
+                "background-position": (
+                    center center,
+                    center center,
+                ),
+            ),
+            $hover-options: (
+                "border-radius": 0,
+                "background-size": (
+                    0 0,
+                    100%,
+                ),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                    f--color-b,
+                ),
+                "font-weight": 500,
+            )
+        );
+    }
+
+    &--fourth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": map-get($color-options, e),
+                "background-image": none,
+                "background-repeat": no-repeat,
+                "background-size": 0,
+                "background-position": center,
+                // "background-class": f--background-a,
+            ),
+            $border-options: (
+                "border-color": transparent,
+                "border-width": 1px,
+                "border-style": solid,
+                "border-radius": 0,
+            ),
+            $hover-options: (
+                "background-color": transparent,
+                "border-color": map-get($color-options, e),
+                "border-radius": 0,
+                "background-size": 0,
+                "color": map-get($color-options, e),
+            ),
+            $font-options: (
+                "font-size": 3rem,
+                "font-weight": 700,
+            ),
+            $custom-options: (
+                "parent": (
+                    width: 100%,
+                ),
+            )
+        );
+    }
+
+    &--fifth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": transparent,
+                "background-image": none,
+                "background-repeat": no-repeat,
+                "background-size": 0,
+                "background-position": none,
+                // "background-class": f--background-a,
+            ),
+            $border-options: (
+                "border-color": map-get($color-options, f),
+                "border-width": 2px,
+                "border-style": solid,
+                "border-radius": $measure * 4,
+            ),
+            $hover-options: (
+                "background-color": map-get($color-options, f),
+                "border-radius": $measure * 4,
+                "background-size": 0,
+                "color": map-get($color-options, b),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-b,
+                    f--color-f,
+                ),
+                "font-weight": 400,
+            ),
+            // $custom-options: (
+            //     "parent": (
+            //         width: 100%,
+            //     ),
+            // )
+        );
+    }
+
+    &--sixth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": map-get($color-options, h),
+                "background-image": (
+                    linear-gradient(
+                        180deg,
+                        rgba(253, 179, 53, 0.7) 0%,
+                        rgba(253, 179, 53, 0.43) 59.55%,
+                        rgba(253, 179, 53, 0) 100%
+                    ),
+                    linear-gradient(
+                        90deg,
+                        map-get($color-options, c) 0%,
+                        map-get($color-options, c) 100%
+                    ),
+                ),
+                "background-repeat": no-repeat,
+                "background-size": (
+                    10%,
+                    90%,
+                ),
+                "background-position": (
+                    left center,
+                    right center,
+                ),
+            ),
+            $hover-options: (
+                "border-radius": 0,
+                "background-size": (
+                    100%,
+                    0,
+                ),
+                "color": map-get($color-options, b),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                ),
+                "color": map-get($color-options, a),
+                "font-weight": 200,
+            )
+        );
+    }
+
+    &--seventh {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": map-get($color-options, g),
+                "background-image": (
+                    linear-gradient(
+                        0deg,
+                        map-get($color-options, e) 0%,
+                        map-get($color-options, e) 49.9%,
+                        map-get($color-options, g) 50%,
+                        map-get($color-options, g) 100%
+                    ),
+                ),
+                "background-repeat": no-repeat,
+                "background-size": (
+                    100% 200%,
+                ),
+                "background-position": (
+                    left top,
+                ),
+            ),
+            $hover-options: (
+                "border-radius": 0,
+                "background-size": (
+                    100% 200%,
+                ),
+                "background-position": left bottom,
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                    f--color-b,
+                ),
+                "letter-spacing": $measure,
+                "font-weight": 700,
+            )
+        );
+    }
 }

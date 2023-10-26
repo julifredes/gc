@@ -1,4 +1,24 @@
-@mixin make-cta-options($options) {
+@mixin make-cta-options($display: flex) {
+    width: 100%;
+    display: $display;
+    @if $display == "flex" {
+        justify-content: center;
+    }
+}
+
+@mixin make-cta-btn-list-options($gap: $cta-btn-list-gap) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+}
+
+@mixin make-cta-btn-list-modifier-options($gap: $cta-btn-list-gap) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+}
+
+@mixin make-cta-modifier-options($options) {
     $cta-options: (
         "align": null,
         "container": null,

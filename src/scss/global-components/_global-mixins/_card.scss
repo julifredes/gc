@@ -1,4 +1,9 @@
-@mixin make-card-options($options) {
+@mixin make-card-options($display: block) {
+    width: 100%;
+    display: $display;
+}
+
+@mixin make-card-modifier-options($options) {
     $card-options: (
         "align": null,
         "min-height": null,
