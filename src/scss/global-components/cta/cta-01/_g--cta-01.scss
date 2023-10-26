@@ -26,11 +26,22 @@
         ),
 
         $item-primary-options: (
-            "text-class": f--font-d,
+            "text-class": f--font-b,
         ),
 
         $item-secondary-options: (
             "text-class": g--btn-01,
+        ),
+        $item-list-options: (
+            2: (
+                "text-class": g--btn-01--ninth
+            ),
+            3: (
+                "text-class": g--btn-01--third
+            ),
+            4: (
+                "text-class": g--btn-01--sixth
+            ),
         ),
         
         $custom-options: (

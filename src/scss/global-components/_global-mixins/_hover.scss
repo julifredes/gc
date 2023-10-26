@@ -60,7 +60,7 @@ $hover-options: (
                 transition: $hover-overlay-transition-list;
             }
         }
-        @else {
+        @else if $hover-transition-list !=  () {
             transition: $hover-transition-list;
         }
     }
