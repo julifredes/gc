@@ -4,10 +4,10 @@
     width: fit-content;
     display: flex;
     align-items: center;
+    column-gap: $btn-icon-gap;
 
     &__artwork {
         height: auto;
-        margin-left: $measure;
     }
 }
 
