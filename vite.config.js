@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         components: resolve(root, 'global-components', 'components.html'), 
+        test: resolve(root, 'global-components', 'test.html'), 
         // about: resolve(root, 'about.html'), 
         // pagewithfolder: resolve(root, 'folder', 'about.html'), 
       }
