@@ -86,12 +86,7 @@
                     f--color-b,
                 ),
                 "font-weight": 300,
-            ),
-            // $custom-options: (
-            //     "parent": (
-            //         width: 100%,
-            //     ),
-            // )
+            )
         );
     }
 
@@ -138,7 +133,6 @@
                 "background-repeat": no-repeat,
                 "background-size": 0,
                 "background-position": center,
-                // "background-class": f--background-a,
             ),
             $border-options: (
                 "border-color": transparent,
@@ -156,11 +150,6 @@
             $font-options: (
                 "font-size": 3rem,
                 "font-weight": 700,
-            ),
-            $custom-options: (
-                "parent": (
-                    width: 100%,
-                ),
             )
         );
     }
@@ -173,7 +162,6 @@
                 "background-repeat": no-repeat,
                 "background-size": 0,
                 "background-position": none,
-                // "background-class": f--background-a,
             ),
             $border-options: (
                 "border-color": map-get($color-options, f),
@@ -193,12 +181,7 @@
                     f--color-f,
                 ),
                 "font-weight": 400,
-            ),
-            // $custom-options: (
-            //     "parent": (
-            //         width: 100%,
-            //     ),
-            // )
+            )
         );
     }
 
@@ -305,7 +288,6 @@
                     left center,
                     right center,
                 ),
-                // "background-class": f--background-a,
             ),
             $border-options: (
                 "border-color": #0202ea,
@@ -328,12 +310,7 @@
                     f--color-b,
                 ),
                 "font-weight": 700,
-            ),
-            // $custom-options: (
-            //     "parent": (
-            //         width: 100%,
-            //     ),
-            // )
+            )
         );
     }
 
@@ -351,7 +328,6 @@
                     left center,
                     right center,
                 ),
-                // "background-class": f--background-a,
             ),
             $border-options: (
                 "border-color": #974ebc,
@@ -374,12 +350,7 @@
                 ),
                 "font-weight": 300,
                 "color": #974ebc,
-            ),
-            // $custom-options: (
-            //     "parent": (
-            //         width: 100%,
-            //     ),
-            // )
+            )
         );
     }
 
@@ -412,12 +383,116 @@
             $font-options: (
                 "font-weight": 300,
                 "color": #444444,
+            )
+        );
+    }
+
+    &--eleventh {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": transparent,
+                "background-image": none,
+                "background-repeat": no-repeat,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-position": (
+                    right bottom,
+                    right center,
+                ),
             ),
-            // $custom-options: (
-            //     "parent": (
-            //         width: 100%,
-            //     ),
-            // )
+            $border-options: (
+                "border-color": #241c15,
+                "border-width": 1px,
+                "border-style": solid,
+                "border-radius": $measure * 4,
+            ),
+            $hover-options: (
+                "border-radius": $measure * 4,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "transform": translateY(-0.375em),
+                "box-shadow": 0px 5px 0px 0px rgb(36, 28, 21),
+            ),
+            $font-options: (
+                "font-weight": 500,
+                "color": #241c15,
+                "font-size": 1.5rem,
+            )
+        );
+    }
+
+    &--twelfth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": lighten(map-get($color-options, a), 80%),
+                "background-image": none,
+                "background-repeat": no-repeat,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-position": (
+                    left center,
+                    right center,
+                ),
+            ),
+            $border-options: (
+                "border-radius": 4px,
+            ),
+            $hover-options: (
+                "border-radius": 4px,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": lighten(map-get($color-options, a), 90%),
+                "text-decoration-color": darken(map-get($color-options, f), 60%),
+            ),
+            $font-options: (
+                "font-weight": 500,
+                "color": darken(map-get($color-options, f), 60%),
+                "text-decoration": underline,
+                "text-decoration-color": transparent,
+            )
+        );
+    }
+
+    &--thirteenth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": #ee8a33,
+                "background-image": (
+                    linear-gradient(to right, #fadbc0, #fadbc0),
+                ),
+                "background-repeat": no-repeat,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-position": (
+                    left center,
+                    right center,
+                ),
+            ),
+            $border-options: (
+                "border-radius": $measure * 4,
+            ),
+            $hover-options: (
+                "border-radius": $measure * 4,
+                "background-size": (
+                    100%,
+                    0,
+                ),
+                "color": #00032a,
+            ),
+            $font-options: (
+                "font-weight": 600,
+                "color": #f7f7ff,
+            )
         );
     }
 }

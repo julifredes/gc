@@ -1,0 +1,22 @@
+@mixin make-padding($variable) {
+    @if type-of($variable) == number {
+        padding: $variable;
+    }
+    @else if type-of($variable) == list {
+        $padding-values: ();
+        @each $item in $variable {
+            @if type-of($item) == number {
+                $padding-values: append($padding-values, $item);
+            }
+            @else {
+                @extend .#{$item};
+            }
+        }
+        @if length($padding-values) > 0 {
+            padding: $padding-values;
+        }
+    }
+    @else {
+        @extend .#{$variable};
+    }
+}

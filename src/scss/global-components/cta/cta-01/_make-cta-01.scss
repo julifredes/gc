@@ -11,7 +11,7 @@
             }
             &__list-group {
                 @include make-cta-item-list-options();
-                &__item-primary {}
+                &__item {}
             }
         }
     }
@@ -46,7 +46,7 @@
                     @include make-hover-transition($options: $item-primary-hover-options);
                 }
                 &__list-group {
-                    &__item-primary {
+                    &__item {
                         @include make-font-options($options: $item-secondary-options);
                         @include make-hover-transition($options: $item-secondary-hover-options);
                         @include make-cta-item-list-modifier-options($options: $item-secondary-list-options);
@@ -67,7 +67,7 @@
                             @include make-hover-interaction($options: $item-primary-hover-options);
                         }
                         &__list-group {
-                            &__item-primary {
+                            &__item {
                                 @include make-hover-interaction($options: $item-secondary-hover-options);
                             }
                         }

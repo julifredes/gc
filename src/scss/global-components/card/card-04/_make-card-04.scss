@@ -64,7 +64,6 @@
         &__media-wrapper {
             @include make-media-options($options: $media-options);
             &__media {
-                @include make-border-options($options: $media-border-options);
                 @include make-hover-transition($options: $media-hover-options);
             }
         }

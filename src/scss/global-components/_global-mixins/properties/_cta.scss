@@ -42,6 +42,7 @@
         "align": null,
         "container": null,
         "min-height": null,
+        "breakpoint": null,
     );
 
     @each $property, $value in $options {
@@ -71,11 +72,34 @@
                     @if $value == "no" {
                         &__wrapper {
                             width: 100%;
-                            padding: $measure*15 $measure*10;
+                            @if variable-exists(cta-inside-container-padding) {
+                                @include make-padding($variable: $cta-inside-container-padding);
+                            }
                             &__content {
                                 max-width: 100%;
                                 width: 100%;
                                 flex: none;
+                            }
+                        }
+                    }
+                    @else if $value == "yes"{
+                        &__wrapper {
+                            @extend .f--container;
+                            @extend .f--row;
+                            @extend .f--row--remove-gutter;
+                            padding-top: $measure*20;
+                            padding-bottom: $measure*20;
+                            &__content {
+                                @if type-of($cta-outside-container-col-class) == list {
+                                    @each $class in $cta-outside-container-col-class {
+                                        @extend .#{$class};
+                                    }
+                                }
+                                @else {
+                                    @extend .#{$cta-outside-container-col-class};
+                                }
+                                padding-left: 0;
+                                padding-right: 0;
                             }
                         }
                     }
@@ -94,9 +118,6 @@
                                 }
                                 @else if $value{
                                     @extend .#{$value};
-                                }
-                                @else {
-                                    @extend .f--col-8;
                                 }
                                 padding-left: 0;
                                 padding-right: 0;

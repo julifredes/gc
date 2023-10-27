@@ -2,11 +2,11 @@
     @include make-cta-01();
     @include make-cta-01-modifier(
         $cta-options: (
-            // "container": yes,
-            "container": (
-                f--col-10,
-                f--col-tablets-12
-            )
+            "container": yes,
+            // "container": (
+            //     f--col-10,
+            //     f--col-tablets-12
+            // )
             // "align": center,
         ),
         $background-options: (
@@ -58,10 +58,6 @@
             ),
             $cta-options: (
                 "container": no,
-                "columns-class": (
-                    f--col-6,
-                    f--col-tablets-12
-                )
                 // "align": center,
             ),
             $custom-options: (

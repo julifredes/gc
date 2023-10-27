@@ -3,9 +3,22 @@
 
 // $padding-cards: $measure*5;
 // $margin-text-cards: $measure*5;
+$g-measure: 0.5rem;
 
 //* btn
-$btn-icon-gap: $measure;
+$btn-icon-gap: $g-measure;
 
 //* cta
-$cta-item-list-gap: $measure $measure*2;
+$cta-item-list-gap: $g-measure $g-measure*2;
+$cta-outside-container-col-class: (
+    f--col-9
+    f--col-desktop-8
+);
+// $cta-inside-container-padding: $g-measure*15 $g-measure*10;
+// $cta-inside-container-padding-responsive: $g-measure*15 $g-measure*10;
+$cta-inside-container-padding: (
+    f--pt-15
+    f--pb-15
+    f--pl-10
+    f--pr-10
+)
