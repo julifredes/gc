@@ -9,6 +9,7 @@
         overflow: hidden;
         position: relative;
         z-index: 1;
+        width: 100%;
         &__media {
             display: block;
             object-fit: cover;
@@ -22,6 +23,8 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100%;
 
         &__item-primary {
             margin-bottom: $measure * 3;
@@ -47,6 +50,7 @@
     $card-options: (),
     $custom-options: (),
     $hover-options: (),
+    $shadow-options: (),
 
     $item-primary-options: (),
     $item-primary-hover-options: (),
@@ -57,11 +61,10 @@
     $item-tertiary-options: (),
     $item-tertiary-hover-options: (),
 
-    $media-border-options: (),
     $media-hover-options: (),
     $media-options: (),
+    $media-background-options: (),
     
-    $shadow-options: (),
 ) {
     @include make-card-modifier-options($options: $card-options);
     @include make-background-options($options: $background-options);
@@ -70,6 +73,7 @@
     @include make-hover-transition($options: $hover-options);
     .g--card-33 {
         &__media-wrapper {
+            @include make-background-options($options: $media-background-options);
             @include make-media-options($options: $media-options);
             &__media {
                 @include make-hover-transition($options: $media-hover-options);

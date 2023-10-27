@@ -20,6 +20,12 @@
                         #{$property}: 100%;
                     }
                 }
+                @else if $property == "aspect-ratio" {
+                    #{$property}: $value;
+                    &__media {
+                        #{$property}: $value;
+                    }
+                }
                 @else {
                     &__media {
                         #{$property}: $value;
