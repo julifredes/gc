@@ -6,37 +6,6 @@
     }
 }
 
-@mixin make-cta-item-list-options($gap: $cta-item-list-gap) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $gap;
-}
-
-@mixin make-cta-item-list-modifier-options($options) {
-    @each $value, $item-options, $item-hover-options in $options {
-        @if $value {
-            @if $value == "first" {
-                &:first-child {
-                    @include make-font-options($options: $item-options);
-                    @include make-hover-transition($options: $item-hover-options);
-                }
-            }
-            @else if $value == "last" {
-                &:last-child {
-                    @include make-font-options($options: $item-options);
-                    @include make-hover-transition($options: $item-hover-options);
-                }
-            }
-            @else {
-                &:nth-child(#{$value}) {
-                    @include make-font-options($options: $item-options);
-                    @include make-hover-transition($options: $item-hover-options);
-                }
-            }
-        }
-    }
-}
-
 @mixin make-cta-modifier-options($options) {
     $cta-options: (
         "align": null,
@@ -131,4 +100,12 @@
             }
         }
     }
+}
+
+@mixin make-cta-item-list-options($gap: $cta-item-list-gap) {
+    @include make-list-options($gap: $gap);
+}
+
+@mixin make-cta-item-list-modifier-options($options) {
+    @include make-list-modifier-options($options: $options);
 }

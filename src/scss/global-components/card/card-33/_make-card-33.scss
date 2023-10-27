@@ -35,10 +35,7 @@
             margin-bottom: $measure * 3;
         }
         &__list-group {
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: $measure;
-            row-gap: $measure;
+            @include make-card-item-list-options();
             margin-top: auto;
         }
     }
@@ -60,6 +57,7 @@
 
     $item-tertiary-options: (),
     $item-tertiary-hover-options: (),
+    $item-tertiary-list-options: (),
 
     $media-hover-options: (),
     $media-options: (),
@@ -93,6 +91,7 @@
                 &__item {
                     @include make-font-options($options: $item-tertiary-options);
                     @include make-hover-transition($options: $item-tertiary-hover-options);
+                    @include make-card-item-list-modifier-options($options: $item-tertiary-list-options);
                 }
             }
         }

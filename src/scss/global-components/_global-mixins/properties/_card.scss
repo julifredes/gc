@@ -45,3 +45,11 @@
         }
     }
 }
+
+@mixin make-card-item-list-options($gap: $card-item-list-gap) {
+    @include make-list-options($gap: $gap);
+}
+
+@mixin make-card-item-list-modifier-options($options) {
+    @include make-list-modifier-options($options: $options);
+}
