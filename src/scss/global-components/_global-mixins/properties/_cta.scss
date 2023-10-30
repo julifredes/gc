@@ -6,31 +6,57 @@
     }
 }
 
-@mixin make-cta-modifier-options($options) {
-    $cta-options: (
-        "align": null,
-        "container": null,
-        "min-height": null,
-    );
+$cta-options: (
+    "align": null,
+    "container": null,
+    "min-height": null,
+);
 
+@mixin make-cta-modifier-options($options) {
     @each $property, $value in $options {
         @if map-has-key($cta-options, $property) {
             @if $value {
                 @if $property == "align" {
                     @if $value == "left" {
                         text-align: left;
-                        &__wrapper {
+                        *[class$="__list-group"] {
                             justify-content: flex-start;
                         }
                     }
                     @else if $value == "center" {
                         text-align: center;
-                        &__wrapper {
+                        *[class$="__list-group"] {
                             justify-content: center;
                         }
                     }
                     @else if $value == "right" {
                         text-align: right;
+                        *[class$="__list-group"] {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin make-cta-modifier-inside-options($options) {
+    @each $property, $value in $options {
+        @if map-has-key($cta-options, $property) {
+            @if $value {
+                @if $property == "align" {
+                    @if $value == "left" {
+                        &__wrapper {
+                            justify-content: flex-start;
+                        }
+                    }
+                    @else if $value == "center" {
+                        &__wrapper {
+                            justify-content: center;
+                        }
+                    }
+                    @else if $value == "right" {
                         &__wrapper {
                             justify-content: flex-end;
                         }

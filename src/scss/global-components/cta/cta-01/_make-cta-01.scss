@@ -37,8 +37,9 @@
     @include make-border-options($options: $border-options);
     @include make-shadow-options($options: $shadow-options);
     @include make-hover-transition($options: $hover-options);
+    @include make-cta-modifier-options($options: $cta-options);
     .g--cta-01 {
-        @include make-cta-modifier-options($options: $cta-options);
+        @include make-cta-modifier-inside-options($options: $cta-options);
         &__wrapper {
             &__content {
                 &__item-primary {
