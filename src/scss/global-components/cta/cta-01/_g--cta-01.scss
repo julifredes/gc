@@ -2,32 +2,30 @@
     @include make-cta-01();
     @include make-cta-01-modifier(
         $cta-options: (
-            "container": yes,
-            // "container": (
-            //     f--col-10,
-            //     f--col-tablets-12
-            // ),
-            // "align": center,
+            // "container": yes,
+            "container": (f--col-6, f--col-tablets-12),
+            // "align": center,,,,,,,,
         ),
         $background-options: (
-            "background-image": url(https://picsum.photos/2000/500),
+            "background-image": url("../../../../assets/bg.jpeg"),
             "background-repeat": no-repeat,
             "background-size": cover,
+            "background-position": center,
             "background-color": map-get($color-options, e),
             "background-overlay": (
                 // "background-size": cover,
                 "background-color": rgba(map-get($color-options, b), 0.6),
-            )
+            ),
         ),
         // $border-options: (
         //     "border-color": red,
         //     "border-width": 1px,
         //     "border-style": solid,
         // ),
-
-        $item-primary-options: (
-            "text-class": f--font-b,
-        ),
+        $item-primary-options:
+            (
+                "text-class": f--font-b,
+            ),
 
         $item-secondary-options: (
             "text-class": g--btn-01,
@@ -36,7 +34,7 @@
             2: (
                 "text-class": g--btn-01--second,
             ),
-        ),
+        )
     );
 
     &--second {
@@ -75,7 +73,7 @@
                 ),
             ),
             $item-secondary-options: (
-                "text-class": g--btn-01--sixth,
+                "text-class": g--btn-01--eleventh,
             )
         );
     }
@@ -83,15 +81,10 @@
     &--third {
         @include make-cta-01-modifier(
             $cta-options: (
-                // "container": yes,
-                "container": (
-                    f--col-4,
-                    f--col-tablets-12
-                ),
                 "align": center,
             ),
             $background-options: (
-                "background-image": url(https://picsum.photos/2000/500),
+                "background-image": url("../../../../assets/bg.jpeg"),
                 "background-repeat": no-repeat,
                 "background-size": 100% 100%,
                 "background-position": center,
@@ -99,22 +92,16 @@
                 "background-overlay": (
                     // "background-size": cover,
                     "background-color": rgba(map-get($color-options, b), 0.6),
-                )
+                ),
             ),
-            // $border-options: (
-            //     "border-color": red,
-            //     "border-width": 1px,
-            //     "border-style": solid,
-            // ),
-            $hover-options:
-            (
+            $hover-options: (
                 "background-size": 130% 130%,
             ),
-    
+
             $item-primary-options: (
                 "text-class": f--font-b,
             ),
-    
+
             $item-secondary-options: (
                 "text-class": g--btn-01--tenth,
             ),
@@ -130,15 +117,17 @@
                 2: (
                     "text-class": g--btn-01--second,
                 ),
-            ),
+            )
         );
     }
 
     &--fourth {
         @include make-cta-01-modifier(
             $cta-options: (
-                // "container": yes,
-                "container": (f--col-4, f--col-tablets-12),
+                "container": (
+                    f--col-8,
+                    f--col-tablets-12,
+                ),
                 "align": right,
             ),
             $background-options: (
