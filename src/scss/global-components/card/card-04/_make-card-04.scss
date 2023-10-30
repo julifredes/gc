@@ -5,7 +5,7 @@
     align-items: flex-start;
     &__media-wrapper {
         overflow: hidden;
-        margin-bottom: $measure * 2;
+        margin-bottom: $card-media-text-space;
         &__media {
             display: block;
             @media all and ($viewport-type: $tablets) {
@@ -60,7 +60,7 @@
     @include make-hover-transition($options: $hover-options);
     .g--card-04 {
         &__media-wrapper {
-            @include make-media-options($options: $media-options);
+            @include make-media-options($options: $media-options, $media-space: "yes");
             &__media {
                 @include make-hover-transition($options: $media-hover-options);
             }

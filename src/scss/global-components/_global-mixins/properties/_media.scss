@@ -1,4 +1,4 @@
-@mixin make-media-options($options) {
+@mixin make-media-options($options, $media-space: "no") {
     $media-options: (
         "aspect-ratio": null,
         "border-color": null,
@@ -9,6 +9,7 @@
         "height": null,
         "object-position": null,
         "width": null,
+        "at bottom": null,
     );
 
     @each $property, $value in $options {
@@ -24,6 +25,18 @@
                     #{$property}: $value;
                     &__media {
                         #{$property}: $value;
+                    }
+                }
+                @else if $property == "at bottom" {
+                    @if $media-space == "yes" {
+                        @if $value == "yes" {
+                            margin-bottom: 0;
+                            margin-top: $card-media-text-space;
+                        }
+                        @else if $value == "no" {
+                            margin-top: 0;
+                            margin-bottom: $card-media-text-space;
+                        }
                     }
                 }
                 @else {
