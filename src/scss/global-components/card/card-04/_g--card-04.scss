@@ -241,4 +241,57 @@
             )
         );
     }
+
+    &--sixth {
+        @include make-card-04-modifier(
+            $card-options: (
+                "align": left,
+            ),
+            $background-options: (
+                "background-image": url("https://picsum.photos/250/300"),
+                "background-position": center,
+                "background-size": cover,
+                "background-repeat": no-repeat,
+                "background-color": #fff,
+                "background-overlay": (
+                    "background-color": rgba(map-get($color-options, b), 0.6),
+                ),
+            ),
+            $border-options: (
+                "border-color": #f3f3f3,
+                "border-width": 2px,
+                "border-style": solid,
+            ),
+            $media-options: (
+                "aspect-ratio": 1,
+                "width": 64px,
+                "object-fit": cover,
+                "object-position": center,
+            ),
+            $media-hover-options: (
+                "transform": scale(1.1),
+            ),
+            $item-primary-options: (
+                "font-size": 1.8rem,
+                "font-weight": 600,
+                "color": #272727,
+            ),
+            $item-secondary-options: (
+                "font-size": 1.125rem,
+                "color": #272727,
+                "font-weight": 600,
+            ),
+            $item-tertiary-options: (
+                "font-size": 1rem,
+                "color": map-get($color-options, h),
+                "font-weight": 600,
+                "text-decoration": none,
+            ),
+            $hover-options: (
+                "transform": translateY(-8px),
+                "border-color": #638c1d,
+                "box-shadow": 0 8px 16px 0 rgba(88, 89, 91, 0.15),
+            )
+        );
+    }
 }
