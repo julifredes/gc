@@ -13,7 +13,65 @@
         @if map-has-key($background-options, $property) {
             @if $value {
                 @if $special ==  "yes"{
-                    @extend .#{$value};
+                    &__wrapper {
+                        @if $property ==  "background-class"{
+                            @extend .#{$value};
+                            position: relative;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 0;
+                                @extend .#{$value};
+                            }
+                        }
+                        @else if $property ==  "background-color"{
+                            #{$property}: $value;
+                            position: relative;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 0;
+                                #{$property}: $value;
+                            }
+                        }
+                        @else if $property ==  "background-overlay"{
+                            position: relative;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 0;
+                                @each $overlay-options, $overlay-value in $value {
+                                    @if map-has-key($background-options, $overlay-options) {
+                                        @if $overlay-options ==  "background-class"{
+                                            @extend .#{$value};
+                                        }
+                                        @else {
+                                            #{$overlay-options}: $overlay-value;
+                                        }
+                                    }
+                                }
+                            }
+                            & > * {
+                                position: relative;
+                                z-index: 1;
+                            }
+                        }
+                        @else {
+                            #{$property}: $value;
+                        }
+                    }
                 }
                 @else {
                     @if $property ==  "background-class"{

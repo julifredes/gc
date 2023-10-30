@@ -4,6 +4,7 @@
 // $padding-cards: $measure*5;
 // $margin-text-cards: $measure*5;
 $g-measure: 0.5rem;
+$g-viewport-type: max-width;
 
 //* btn
 $btn-icon-gap: $g-measure;
@@ -17,11 +18,12 @@ $cta-outside-container-col-class: (
     f--col-9
     f--col-desktop-8
 );
-// $cta-inside-container-padding: $g-measure*15 $g-measure*10;
-// $cta-inside-container-padding-responsive: $g-measure*15 $g-measure*10;
-$cta-inside-container-padding: (
-    f--pt-15
-    f--pb-15
-    f--pl-10
-    f--pr-10
-)
+$cta-inside-container-breakpoint: $tablets;
+$cta-inside-container-padding: $g-measure*15 $g-measure*10;
+$cta-inside-container-padding-responsive: $g-measure*10 $g-measure*7;
+// $cta-inside-container-padding: (
+//     f--pt-15
+//     f--pb-15
+//     f--pl-10
+//     f--pr-10
+// )

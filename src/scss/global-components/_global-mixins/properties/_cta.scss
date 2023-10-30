@@ -11,7 +11,6 @@
         "align": null,
         "container": null,
         "min-height": null,
-        "breakpoint": null,
     );
 
     @each $property, $value in $options {
@@ -43,6 +42,13 @@
                             width: 100%;
                             @if variable-exists(cta-inside-container-padding) {
                                 @include make-padding($variable: $cta-inside-container-padding);
+                            }
+                            @if variable-exists(cta-inside-container-breakpoint) {
+                                @media all and ($g-viewport-type: $cta-inside-container-breakpoint) {
+                                    @if variable-exists(cta-inside-container-padding-responsive) {
+                                        @include make-padding($variable: $cta-inside-container-padding-responsive);
+                                    }
+                                }
                             }
                             &__content {
                                 max-width: 100%;

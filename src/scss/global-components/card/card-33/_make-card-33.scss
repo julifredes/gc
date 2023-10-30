@@ -63,11 +63,11 @@
     
 ) {
     @include make-card-modifier-options($options: $card-options);
-    @include make-background-options($options: $background-options);
     @include make-border-options($options: $border-options);
     @include make-shadow-options($options: $shadow-options);
     @include make-hover-transition($options: $hover-options);
     .g--card-33 {
+        @include make-background-options($options: $background-options, $special: "yes");
         &__media-wrapper {
             @include make-background-options($options: $media-background-options);
             @include make-media-options($options: $media-options);
