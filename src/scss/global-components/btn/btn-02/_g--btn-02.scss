@@ -12,9 +12,9 @@
             )
         ),
         $artwork-options: (
+            "width": $measure*2,
             "stroke": map-get($color-options, i),
-            "width": $measure*2
-        ),
+        )
     );
 
     &--second {

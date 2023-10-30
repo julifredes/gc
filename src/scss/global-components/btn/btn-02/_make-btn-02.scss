@@ -26,6 +26,11 @@
     @include make-hover-transition($options: $hover-options);
 
     .g--btn-02 {
+        &__content {
+            @if map-has-key($artwork-options, "width") {
+                max-width: calc(100% - map-get($artwork-options, width) - #{$btn-icon-gap});
+            }
+        }
         &__artwork {
             @include make-svg-options($options: $artwork-options);
             @include make-hover-transition($options: $artwork-hover-options);
