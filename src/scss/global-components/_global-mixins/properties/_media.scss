@@ -1,4 +1,4 @@
-@mixin make-media-options($options, $media-space: "no") {
+@mixin make-media-options($options, $media-space: "no", $special: "no") {
     $media-options: (
         "aspect-ratio": null,
         "border-color": null,
@@ -22,9 +22,34 @@
                     }
                 }
                 @else if $property == "aspect-ratio" {
-                    #{$property}: $value;
-                    &__media {
-                        #{$property}: $value;
+                    @if $special == "yes" {
+                        @if type-of($value) == list {
+                            padding-top: calc((nth($value, length($value)) / nth($value, 1)) * 100%);
+                            &__media {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                        @else {
+                            aviso: aviso;
+                        }
+                    }
+                    @else {
+                        @if type-of($value) == list {
+                            #{$property}: calc(nth($value, 1) / nth($value, length($value)));
+                            &__media {
+                                #{$property}: $value;
+                            }
+                        }
+                        @else {
+                            #{$property}: $value;
+                            &__media {
+                                #{$property}: $value;
+                            }
+                        }
                     }
                 }
                 @else if $property == "at bottom" {

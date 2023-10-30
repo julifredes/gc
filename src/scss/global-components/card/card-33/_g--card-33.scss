@@ -17,10 +17,10 @@
             // "box-shadow": 0 0 1rem white,
         ),
         $media-options: (
-            "aspect-ratio": calc(16 / 9),
+            "aspect-ratio": 2 1,
             // "width": 50%,
             // "object-fit": cover,
-            "object-position": top
+            "object-position": top,
         ),
         $media-hover-options: (
             "transform": scale(1.5),
@@ -55,4 +55,11 @@
         //     )
         // ),
     );
+    &--second {
+        @include make-card-33-modifier(
+            $media-options: (
+                "at bottom": yes,
+            ),
+        );
+    }
 }

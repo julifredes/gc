@@ -70,7 +70,7 @@
         @include make-background-options($options: $background-options, $special: "yes");
         &__media-wrapper {
             @include make-background-options($options: $media-background-options);
-            @include make-media-options($options: $media-options);
+            @include make-media-options($options: $media-options, $special: "yes");
             &__media {
                 @include make-hover-transition($options: $media-hover-options);
             }
