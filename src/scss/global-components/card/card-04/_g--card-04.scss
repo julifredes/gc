@@ -28,7 +28,7 @@
                 "color": #272727,
                 // "text-class": f--font-f,
                 // "text-decoration": underline,
-                // "text-decoration-position": under,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+                // "text-decoration-position": under,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             ),
         // $item-primary-hover-options: (
         //      "color": blue,
@@ -88,7 +88,11 @@
             $item-tertiary-options: (
                 "font-size": 1rem,
                 "color": #353535,
-                "text-decoration": none,
+                "text-decoration": underline,
+                "text-decoration-color": transparent,
+            ),
+            $item-tertiary-hover-options: (
+                "text-decoration-color": #191414,
             ),
             $hover-options: (
                 "transform": translateY(0),
@@ -134,8 +138,12 @@
             $item-tertiary-options: (
                 "font-size": calc(1.125rem + 0.25 * (100vw - 48rem) / 42),
                 "color": #191414,
-                "text-decoration": none,
+                "text-decoration": underline,
+                "text-decoration-color": transparent,
                 "font-weight": 500,
+            ),
+            $item-tertiary-hover-options: (
+                "text-decoration-color": #191414,
             ),
             $hover-options: (
                 "transform": translateY(0),
