@@ -7,7 +7,7 @@
             // "align": center,,,,,,,,
         ),
         $background-options: (
-            "background-image": url("../../../../assets/bg.jpeg"),
+            "background-image": url("../assets/bg.jpeg"),
             "background-repeat": no-repeat,
             "background-size": cover,
             "background-position": center,
@@ -26,13 +26,12 @@
             (
                 "text-class": f--font-b,
             ),
-
-        $item-secondary-options: (
-            "text-class": g--btn-01,
-        ),
         $item-secondary-list-options: (
+            1: (
+                "text-class": g--btn-01,
+            ),
             2: (
-                "text-class": g--btn-01--second,
+                "text-class": g--btn-02,
             ),
         )
     );
@@ -72,8 +71,10 @@
                     100%,
                 ),
             ),
-            $item-secondary-options: (
-                "text-class": g--btn-01--eleventh,
+            $item-secondary-list-options: (
+                1: (
+                    "text-class": g--btn-01--eleventh,
+                ),
             )
         );
     }
@@ -84,7 +85,7 @@
                 "align": center,
             ),
             $background-options: (
-                "background-image": url("../../../../assets/bg.jpeg"),
+                "background-image": url("../assets/bg.jpeg"),
                 "background-repeat": no-repeat,
                 "background-size": 100% 100%,
                 "background-position": center,
@@ -114,8 +115,8 @@
                 "border-color": #007cad,
             ),
             $item-secondary-list-options: (
-                2: (
-                    "text-class": g--btn-01--second,
+                1: (
+                    "text-class": g--btn-01--tenth,
                 ),
             )
         );
@@ -147,8 +148,10 @@
                 "text-class": f--font-b,
             ),
 
-            $item-secondary-options: (
-                "text-class": g--btn-01--third,
+            $item-secondary-list-options: (
+                1: (
+                    "text-class": g--btn-01--third,
+                ),
             )
         );
     }

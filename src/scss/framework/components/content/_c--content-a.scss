@@ -1,0 +1,156 @@
+@import "@teamthunderfoot/wysiwyg-content-sanity/src/scss/_mixins.scss";
+
+.c--content-a {
+    @include block-image(
+        $caption-font: g,
+        $caption-margin-top: $measure * 2,
+        $caption-font-weight: 300,
+        $image-block-margin-bottom: $measure * 5,
+        $img-border-radius: 20px,
+        // $size-small: 25%,
+        // $size-medium: 50%,
+    );
+
+    @include block-image-modifier($caption-color: map-get($color-options, a));
+
+    @include block-quote(
+        $quote-font: d,
+        $quote-font-style: normal,
+        $quote-padding: $measure * 3,
+        $quote-margin-top: $measure * 4,
+        $quote-margin-bottom: $measure * 4,
+        // $quote-font-weight: false,
+    );
+    @include block-quote-modifier(
+        $quote-color: map-get($color-options, a),
+        $border-color: transparent,
+        $border-width: 0px
+    );
+
+    @include headings(
+        $h2-font: c,
+        $h3-font: d,
+        $h4-font: d,
+        $h5-font: e,
+        $h6-font: e,
+        // $h2-padding-top: $measure*5,
+        // $h2-margin-bottom: $measure*3,
+        // $h3-padding-top: $measure*5,
+        // $h3-margin-bottom: $measure*3,
+        // $h4-padding-top: $measure*5,
+        // $h4-margin-bottom: $measure*2,
+        // $h5-padding-top: $measure*5,
+        // $h5-margin-bottom: $measure*2,
+        // $h6-padding-top: $measure*5,
+        // $h6-margin-bottom: $measure,
+        $h2-font-weight: 700,
+        $h3-font-weight: 700,
+        $h4-font-weight: 500,
+        $h5-font-weight: 700,
+        // $h6-font-weight: false,
+    );
+    @include headings-modifier(
+        $h2-color: map-get($color-options, a),
+        $h3-color: map-get($color-options, a),
+        $h4-color: map-get($color-options, a),
+        $h5-color: map-get($color-options, a),
+        $h6-color: map-get($color-options, a)
+    );
+
+    @include links($link-class: g--link-01);
+    @include links-modifier($link-class-modifier: g--link-01--second);
+
+    @include lists(
+        $text-font: e,
+        $first-number-width: 24px,
+        $first-level-artwork-width: 6px,
+        $first-level-artwork-top: 9px,
+        $lists-margin-bottom: $measure * 4,
+        $lists-items-margin-bottom: $measure,
+        // $second-level-artwork-width: false,
+        // $second-level-artwork-top: false,
+        $third-level-artwork-width: 6px,
+        $third-level-artwork-top: 10px,
+        // $text-font-weight: false,
+    );
+    @include lists-modifier(
+        $text-color: map-get($color-options, a),
+        $number-color: map-get($color-options, e),
+        // $first-level-artwork-image: 'https://picsum.photos/20',
+        // $first-level-artwork-border-radius: false,
+        $first-level-artwork-background: map-get($color-options, g),
+        // $first-level-artwork-border-width: false,
+        // $first-level-artwork-border-color: false,
+        // $second-level-artwork-image: false,
+        $first-level-artwork-border-radius: 50%,
+        $second-level-artwork-background: map-get($color-options, e),
+        $second-level-artwork-border-width: 2px,
+        //$second-level-artwork-border-color: false,
+        // $third-level-artwork-image: false,
+        // $first-level-artwork-border-radius: false,
+        $third-level-artwork-background: map-get($color-options, i),
+        //$third-level-artwork-border-width: false,
+        //$third-level-artwork-border-color: false,
+    );
+
+    @include paragraphs(
+        $text-font: e,
+        $bold-font-weight: 700,
+        $paragraphs-margin-bottom: $measure * 4,
+        $paragraphs-before-lists-margin-bottom: $measure * 3,
+        $text-font-weight: 400
+    );
+    @include paragraphs-modifier($text-color: map-get($color-options, a));
+
+    & > h2:first-child,
+    & > h3:first-child,
+    & > h4:first-child,
+    & > h5:first-child,
+    & > h6:first-child,
+    & > p:first-child {
+        padding-top: 0;
+    }
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    &--second {
+        @include block-image-modifier($caption-color: map-get($color-options, b));
+
+        @include block-quote-modifier(
+            $quote-color: map-get($color-options, b),
+            $border-color: map-get($color-options, b),
+            $border-width: 1px
+        );
+
+        @include lists-modifier(
+            $text-color: map-get($color-options, b),
+            $number-color: map-get($color-options, e),
+            // $first-level-artwork-image: 'https://picsum.photos/20',
+            // $first-level-artwork-border-radius: false,
+            $first-level-artwork-background: map-get($color-options, g),
+            // $first-level-artwork-border-width: false,
+            // $first-level-artwork-border-color: false,
+            // $second-level-artwork-image: false,
+            $first-level-artwork-border-radius: 50%,
+            $second-level-artwork-background: map-get($color-options, e),
+            $second-level-artwork-border-width: 2px,
+            //$second-level-artwork-border-color: false,
+            // $third-level-artwork-image: false,
+            // $first-level-artwork-border-radius: false,
+            $third-level-artwork-background: map-get($color-options, i),
+            //$third-level-artwork-border-width: false,
+            //$third-level-artwork-border-color: false,
+        );
+
+        @include headings-modifier(
+            $h2-color: map-get($color-options, b),
+            $h3-color: map-get($color-options, b),
+            $h4-color: map-get($color-options, b),
+            $h5-color: map-get($color-options, b),
+            $h6-color: map-get($color-options, b)
+        );
+
+        @include paragraphs-modifier($text-color: map-get($color-options, b));
+    }
+}

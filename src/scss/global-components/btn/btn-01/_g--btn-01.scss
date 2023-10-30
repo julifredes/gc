@@ -495,4 +495,37 @@
             )
         );
     }
+
+    &--fourteenth {
+        @include make-btn-01-modifier(
+            $background-options: (
+                "background-color": #f5ff00,
+                "background-image": none,
+                "background-size": (
+                    0,
+                    0,
+                ),
+            ),
+            $border-options: (
+                "border-color": transparent,
+                "border-width": 1px,
+                "border-style": solid,
+                "border-radius": 100px,
+            ),
+            $hover-options: (
+                "border-radius": 100px,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": transparent,
+                "border-color": #021110,
+            ),
+            $font-options: (
+                "font-size": 1rem,
+                "color": #021110,
+                "font-weight": 600,
+            ),
+        );
+    }
 }

@@ -1,18 +1,17 @@
 .g--btn-02 {
     @include make-btn-02();
     @include make-btn-02-modifier(
-        $artwork-hover-options:
-        (
+        $artwork-hover-options: (
             "transform": translateX($measure),
         ),
         $font-options: (
             "text-class": (
                 f--font-d,
-                f--color-b,
-            )
+                f--color-a,
+            ),
         ),
         $artwork-options: (
-            "width": $measure*2,
+            "width": $measure * 2,
             "stroke": map-get($color-options, i),
         )
     );
@@ -20,30 +19,39 @@
     &--second {
         @include make-btn-02-modifier(
             $background-options: (
-                "background-image": linear-gradient(to right, map-get($color-options, i), map-get($color-options, i)),
+                "background-image":
+                    linear-gradient(
+                        to right,
+                        map-get($color-options, i),
+                        map-get($color-options, i)
+                    ),
                 "background-repeat": no-repeat,
                 "background-size": 100% 2px,
                 "background-position": left bottom,
-            ),
+            )
         );
     }
 
     &--third {
         @include make-btn-02-modifier(
             $background-options: (
-                "background-image": linear-gradient(to right, map-get($color-options, g), map-get($color-options, d)),
+                "background-image":
+                    linear-gradient(
+                        to right,
+                        map-get($color-options, g),
+                        map-get($color-options, d)
+                    ),
                 "background-repeat": no-repeat,
                 "background-size": 0 2px,
                 "background-position": left bottom,
             ),
             $artwork-options: (
                 "stroke": map-get($color-options, g),
-                "top": 4px
+                "top": 4px,
             ),
-            $hover-options:
-            (
+            $hover-options: (
                 "background-size": 100% 2px,
-            ),
+            )
         );
     }
 }
