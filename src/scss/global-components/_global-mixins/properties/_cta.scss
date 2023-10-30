@@ -66,6 +66,7 @@ $cta-options: (
                     @if $value == "no" {
                         &__wrapper {
                             width: 100%;
+                            max-width: 100%;
                             @if variable-exists(cta-inside-container-padding) {
                                 @include make-padding($variable: $cta-inside-container-padding);
                             }
