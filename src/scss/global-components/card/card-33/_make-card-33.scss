@@ -59,7 +59,6 @@
 
     $media-hover-options: (),
     $media-options: (),
-    $media-background-options: (),
     
 ) {
     @include make-card-modifier-options($options: $card-options);
@@ -77,7 +76,6 @@
                     height: auto;
                 }
             }
-            @include make-background-options($options: $media-background-options);
             @include make-media-options($options: $media-options, $special: "yes");
             &__media {
                 @if map-has-key($media-options, "full-height") {

@@ -1,0 +1,67 @@
+.g--card-46 {
+    @include make-card-46();
+    // @include make-card-46-modifier(
+    //     $card-options: (
+    //         "align": center,
+    //     ),
+    //     $background-options: (
+    //         "background-color": red,
+    //     ),
+    //     $border-options: (
+    //         // "border-color": tomato,
+    //         // "border-width": 2px 4px,
+    //         // "border-style": solid,
+    //         "border-radius": 40px,
+    //     ),
+    //     $shadow-options: (
+    //         // "box-shadow": 0 0 1rem white,
+    //     ),
+    //     $media-options: (
+    //         "aspect-ratio": 3 1,
+    //         // "width": 50%,
+    //         // "object-fit": cover,
+    //         "object-position": top,
+    //     ),
+    //     $media-hover-options: (
+    //         "transform": scale(1.5),
+    //     ),
+    //     $item-primary-options: (
+    //         "text-class": f--font-e,
+    //         "text-decoration": underline,
+    //         "text-decoration-position": under,
+    //     ),
+    //     // $item-primary-hover-options: (
+    //     //     "color": blue,
+    //     // ),
+    //     $item-secondary-options: (
+    //         "text-class": f--font-d,
+    //     ),
+    //     $item-tertiary-options: (
+    //         "text-class": g--btn-01,
+    //     ),
+    //     // $item-tertiary-hover-options: (
+    //     //     "border-radius": 30px,
+    //     //     "background-size": (0, 100%),
+    //     // ),
+    //     // $custom-options: (
+    //     //     // "parent": (
+    //     //     //     background: red,
+    //     //     //     max-width: 400px,
+    //     //     //     class: f--col-12,
+    //     //     // ),
+    //     //     "&__item-primary": (
+    //     //         background: red,
+    //     //         class: f--col-12,
+    //     //     )
+    //     // ),
+    // );
+    &--second {
+        // @include make-card-46-modifier(
+        //     $media-options: (
+        //         "at bottom": yes,
+        //         "aspect-ratio": no,
+        //         "height": 300px,
+        //     ),
+        // );
+    }
+}

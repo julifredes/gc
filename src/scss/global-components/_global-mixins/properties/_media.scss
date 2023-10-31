@@ -1,6 +1,12 @@
 @mixin make-media-options($options, $media-space: "no", $special: "no") {
     $media-options: (
         "aspect-ratio": null,
+        "background-class": null,
+        "background-color": null,
+        "background-image": null,
+        "background-repeat": null,
+        "background-size": null,
+        "background-position": null,
         "border-color": null,
         "border-radius": null,
         "border-style": null,
@@ -25,6 +31,9 @@
                     &__media {
                         #{$property}: 100%;
                     }
+                }
+                @else if $property == "background-class" or $property == "background-color" or $property == "background-image" or $property == "background-repeat" or $property == "background-size" or $property == "background-position" {
+                    #{$property}: $value;
                 }
                 @else if $property == "aspect-ratio" {
                     @if $special == "yes" {
