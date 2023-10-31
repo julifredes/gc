@@ -62,4 +62,94 @@
             )
         );
     }
+
+    &--fourth {
+        @include make-btn-02-modifier(
+            $artwork-hover-options: (
+                "transform": translate(20%, -30%),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                    f--color-a,
+                ),
+                "font-weight": 700,
+            ),
+            $artwork-options: (
+                "width": $measure * 2,
+                "stroke": transparent,
+            )
+        );
+    }
+
+    &--fifth {
+        @include make-btn-02-modifier(
+            $artwork-hover-options: (
+                "transform": scale(1.3),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                ),
+                "font-weight": 500,
+                "color": map-get($color-options, h),
+            ),
+            $artwork-options: (
+                "width": $measure * 2,
+                "stroke": map-get($color-options, h),
+            )
+        );
+    }
+
+    &--sixth {
+        @include make-btn-02-modifier(
+            $artwork-hover-options: (
+                "transform": rotate(90deg),
+                "stroke": map-get($color-options, a),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                ),
+                "font-weight": 500,
+                "color": map-get($color-options, a),
+            ),
+            $artwork-options: (
+                "width": $measure * 2,
+                "stroke": map-get($color-options, f),
+            )
+        );
+    }
+
+    &--seventh {
+        @include make-btn-02-modifier(
+            $artwork-hover-options: (
+                "transform": skew(15deg, 15deg),
+            ),
+            $font-options: (
+                "text-class": (
+                    f--font-d,
+                ),
+                "font-weight": 500,
+                "color": map-get($color-options, d),
+            ),
+            $artwork-options: (
+                "width": $measure * 3,
+            ),
+            $background-options: (
+                "background-image":
+                    linear-gradient(
+                        to right,
+                        map-get($color-options, f),
+                        map-get($color-options, f)
+                    ),
+                "background-repeat": no-repeat,
+                "background-size": 0 2px,
+                "background-position": left bottom,
+            ),
+            $hover-options: (
+                "background-size": 100% 2px,
+            )
+        );
+    }
 }
