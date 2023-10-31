@@ -113,6 +113,11 @@
                     height: auto;
                 }
             }
+            @if map-has-key($media-options, "aspect-ratio") and map-has-key($media-options, "height") {
+                @if map-get($media-options, aspect-ratio) != "no" and map-get($media-options, height) != "auto" {
+                    @error "you can't add aspect-ratio and height in the same img";
+                }
+            }
             &__item-primary {
                 @include make-font-options($options: $item-primary-options);
                 @include make-hover-transition($options: $item-primary-hover-options);
