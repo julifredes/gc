@@ -26,8 +26,7 @@
     @include make-hover-transition($options: $hover-options);
 
     @media all and (hover: hover) {
-        &:hover,
-        &:active {
+        &:hover {
             @include make-hover-interaction($options: $hover-options);
         }
     }

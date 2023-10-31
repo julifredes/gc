@@ -47,7 +47,12 @@
             ),
             $artwork-options: (
                 "stroke": map-get($color-options, g),
-                "top": 4px,
+                "top": 1px,
+            ),
+            $font-options: (
+                "text-class": (
+                    f--color-g,
+                ),
             ),
             $hover-options: (
                 "background-size": 100% 2px,
