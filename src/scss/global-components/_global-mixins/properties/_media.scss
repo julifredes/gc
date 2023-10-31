@@ -20,7 +20,7 @@
         "width": null,
         "max-width": null,
         "min-width": null,
-        "at bottom": null,
+        "last": null,
     );
 
     @each $property, $value in $options {
@@ -74,7 +74,7 @@
                         }
                     }
                 }
-                @else if $property == "at bottom" {
+                @else if $property == "last" {
                     @if $media-space == "yes" {
                         @if $value == "yes" {
                             order: 1;

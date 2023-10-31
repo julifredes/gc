@@ -58,7 +58,7 @@
     &--second {
         @include make-card-33-modifier(
             $media-options: (
-                "at bottom": yes,
+                "last": yes,
                 "aspect-ratio": no,
                 "height": 300px,
             ),

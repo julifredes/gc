@@ -2,9 +2,10 @@
     width: 100%;
     display: $display;
     text-decoration: none;
+    overflow: hidden;
 }
 
-@mixin make-card-modifier-options($options) {
+@mixin make-card-modifier-options($options, $align-items: "yes") {
     $card-options: (
         "align": null,
         "min-height": null,
@@ -16,10 +17,12 @@
                 @if $property == "align" {
                     @if $value == "left" {
                         text-align: left;
-                        align-items: flex-start;
-                        *[class$="__media"] {
-                            margin-left: 0;
-                            margin-right: auto;
+                        @if $align-items == "yes" {
+                            align-items: flex-start;
+                            *[class$="__media"] {
+                                margin-left: 0;
+                                margin-right: auto;
+                            }
                         }
                         *[class$="__list-group"] {
                             justify-content: flex-start;
@@ -27,10 +30,12 @@
                     }
                     @if $value == "center" {
                         text-align: center;
-                        align-items: center;
-                        *[class$="__media"] {
-                            margin-left: auto;
-                            margin-right: auto;
+                        @if $align-items == "yes" {
+                            align-items: center;
+                            *[class$="__media"] {
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
                         }
                         *[class$="__list-group"] {
                             justify-content: center;
@@ -38,10 +43,12 @@
                     }
                     @if $value == "right" {
                         text-align: right;
-                        align-items: flex-end;
-                        *[class$="__media"] {
-                            margin-left: auto;
-                            margin-right: 0;
+                        @if $align-items == "yes" {
+                            align-items: flex-end;
+                            *[class$="__media"] {
+                                margin-left: auto;
+                                margin-right: 0;
+                            }
                         }
                         *[class$="__list-group"] {
                             justify-content: flex-end;
