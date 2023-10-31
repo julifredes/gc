@@ -69,13 +69,50 @@
     .g--card-33 {
         @include make-background-options($options: $background-options, $special: "yes");
         &__media-wrapper {
+            @if map-has-key($media-options, "full-height") {
+                @if map-get($media-options, full-height) == "yes" {
+                    height: 100%;
+                }
+                @else if map-get($media-options, full-height) == "no" {
+                    height: auto;
+                }
+            }
             @include make-background-options($options: $media-background-options);
             @include make-media-options($options: $media-options, $special: "yes");
             &__media {
+                @if map-has-key($media-options, "full-height") {
+                    @if map-get($media-options, full-height) == "yes" {
+                        height: 100%;
+                    }
+                    @else if map-get($media-options, full-height) == "no" {
+                        height: auto;
+                    }
+                }
                 @include make-hover-transition($options: $media-hover-options);
             }
         }
         &__wrapper {
+            @if map-has-key($media-options, "aspect-ratio") {
+                @if map-get($media-options, aspect-ratio) != "no" {
+                    height: 100%;
+                }
+                @else {
+                    height: auto;
+                }
+            }
+            @if map-has-key($media-options, "height") {
+                @if map-get($media-options, height) != "auto" {
+                    height: calc(100% - map-get($media-options, height));
+                }
+                @else {
+                    height: auto;
+                }
+            }
+            @if map-has-key($media-options, "full-height") {
+                @if map-get($media-options, full-height) == "yes" {
+                    height: auto;
+                }
+            }
             &__item-primary {
                 @include make-font-options($options: $item-primary-options);
                 @include make-hover-transition($options: $item-primary-hover-options);

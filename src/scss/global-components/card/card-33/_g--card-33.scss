@@ -17,7 +17,7 @@
             // "box-shadow": 0 0 1rem white,
         ),
         $media-options: (
-            "aspect-ratio": 2 1,
+            "aspect-ratio": 3 1,
             // "width": 50%,
             // "object-fit": cover,
             "object-position": top,
@@ -59,6 +59,8 @@
         @include make-card-33-modifier(
             $media-options: (
                 "at bottom": yes,
+                "aspect-ratio": no,
+                "full-height": yes,
             ),
         );
     }
