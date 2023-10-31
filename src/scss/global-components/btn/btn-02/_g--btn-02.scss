@@ -49,6 +49,9 @@
                 "stroke": map-get($color-options, g),
                 "top": 1px,
             ),
+            $artwork-hover-options: (
+                "transform": translate($measure, -$measure),
+            ),
             $font-options: (
                 "text-class": (
                     f--color-g,

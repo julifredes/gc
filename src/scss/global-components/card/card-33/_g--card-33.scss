@@ -2,66 +2,342 @@
     @include make-card-33();
     @include make-card-33-modifier(
         $card-options: (
-            "align": center,
+            // "align": center,
         ),
         $background-options: (
-            "background-color": red,
+            "background-color": #3d24d6,
         ),
         $border-options: (
             // "border-color": tomato,
             // "border-width": 2px 4px,
             // "border-style": solid,
-            "border-radius": 40px,
+            "border-radius": 0 90px 0 0,
         ),
         $shadow-options: (
-            // "box-shadow": 0 0 1rem white,
+            box-shadow: 0px 13px 29px 1px rgba(0, 0, 0, 0.25),
         ),
         $media-options: (
-            "aspect-ratio": 3 1,
+            "aspect-ratio": 4 3,
             // "width": 50%,
             // "object-fit": cover,
             "object-position": top,
         ),
         $media-hover-options: (
-            "transform": scale(1.5),
+            // "transform": scale(1.5),
         ),
         $item-primary-options: (
-            "text-class": f--font-e,
+            "text-class": f--font-d,
             "text-decoration": underline,
             "text-decoration-position": under,
+            "color": #caff5a,
         ),
         // $item-primary-hover-options: (
         //     "color": blue,
         // ),
-        $item-secondary-options: (
-            "text-class": f--font-d,
-        ),
+        $item-secondary-options:
+            (
+                "text-class": f--font-f,
+                "color": map-get($color-options, b),
+            ),
         $item-tertiary-options: (
-            "text-class": g--btn-01,
+            "text-class": g--btn-01 g--btn-01--fourteenth,
+            "color": #3d24d6,
+            "font-weight": 400,
         ),
-        // $item-tertiary-hover-options: (
-        //     "border-radius": 30px,
-        //     "background-size": (0, 100%),
-        // ),
-        // $custom-options: (
-        //     // "parent": (
-        //     //     background: red,
-        //     //     max-width: 400px,
-        //     //     class: f--col-12,
-        //     // ),
-        //     "&__item-primary": (
-        //         background: red,
-        //         class: f--col-12,
-        //     )
-        // ),
+        $item-tertiary-hover-options: (
+            "border-radius": 100px,
+            "background-size": (
+                0,
+                0,
+            ),
+            "background-color": transparent,
+            "border-color": map-get($color-options, b),
+            "color": map-get($color-options, b),
+        )
     );
+
+    // &--second {
+    //     @include make-card-33-modifier(
+    //         $media-options: (
+    //             "at bottom": yes,
+    //             "aspect-ratio": no,
+    //             "height": 300px,
+    //         )
+    //     );
+    // }
+
     &--second {
         @include make-card-33-modifier(
-            $media-options: (
-                "last": yes,
-                "aspect-ratio": no,
-                "height": 300px,
+            $card-options: (),
+            $background-options: (
+                "background-color": map-get($color-options, c),
             ),
+            $border-options: (
+                "border-color": #dd469d,
+                "border-width": 3px,
+                "border-style": solid,
+                "border-radius": 0,
+            ),
+            $media-options: (
+                "aspect-ratio": 4 2,
+                // "width": 50%,
+                "object-fit": cover,
+                "object-position": center,
+            ),
+            $media-hover-options: (
+                "transform": scale(1.5),
+            ),
+            $item-primary-options: (
+                "text-class": f--font-d,
+                "text-decoration": none,
+                "color": #dd469d,
+                "font-weight": 600,
+            ),
+            $item-secondary-options: (
+                "text-class": f--font-f,
+                "color": map-get($color-options, a),
+            ),
+            $item-tertiary-options: (
+                "text-class": g--btn-01--second,
+                "color": #dd469d,
+            ),
+            $item-tertiary-hover-options: (
+                "border-radius": 100px,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": rgba(#dd469d, 0.2),
+                "border-color": transparent,
+                "color": #dd469d,
+            ),
+            $custom-options: (
+                ".g--card-33__wrapper__list-group__item": (
+                    background-color: rgba(#dd469d, 0.2),
+                ),
+            )
+        );
+    }
+
+    &--third {
+        @include make-card-33-modifier(
+            $card-options: (
+                "align": center,
+            ),
+            $background-options: (
+                "background-color": map-get($color-options, c),
+            ),
+            $shadow-options: (
+                box-shadow: 16px 16px 0px 0px #2f37c9,
+            ),
+            $border-options: (
+                // "border-color": transparent,
+                // "border-width": 0,
+                // "border-style": solid,
+                "border-radius": 40px,
+            ),
+            $media-options: (
+                "aspect-ratio": 4 3,
+                "object-fit": cover,
+                "object-position": center,
+            ),
+            $item-primary-options: (
+                "text-class": f--font-d,
+                "text-decoration": none,
+                "color": #2f37c9,
+            ),
+            $item-secondary-options: (
+                "text-class": f--font-f,
+                "color": #2f37c9,
+            ),
+            $item-tertiary-options: (
+                "color": #2f37ca,
+                "font-weight": 600,
+            ),
+            $item-tertiary-hover-options: (
+                "border-radius": 12px,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": transparent,
+                "border-color": #2f37ca,
+                "color": #2f37ca,
+            ),
+            $hover-options: (
+                "box-shadow": 8px 8px 0px 0px #2f37c9,
+            ),
+            $custom-options: (
+                ".g--card-33__wrapper__list-group__item": (
+                    border-radius: 12px,
+                    background-color: #ffcb2f,
+                    border-color: #2f37ca,
+                ),
+            )
+        );
+    }
+
+    &--fourth {
+        @include make-card-33-modifier(
+            $card-options: (
+                "align": center,
+            ),
+            $background-options: (
+                "background-color": #2b5fa9,
+            ),
+            $border-options: (
+                "border-radius": 900px,
+            ),
+            $media-options: (
+                "aspect-ratio": 3 4,
+                "object-fit": cover,
+                "object-position": center,
+            ),
+            $item-primary-options: (
+                "text-class": f--font-d,
+                "text-decoration": none,
+                "color": #f7d25c,
+            ),
+            $item-secondary-options: (
+                "text-class": f--font-f,
+                "color": map-get($color-options, b),
+            ),
+            $item-tertiary-options: (
+                "color": #f7d25c,
+                "text-decoration": underline,
+                "text-decoration-color": #f7d25c,
+            ),
+            $item-tertiary-hover-options: (
+                "border-radius": 0,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": transparent,
+                "border-color": transparent,
+                "color": map-get($color-options, b),
+                "text-decoration-color": map-get($color-options, b),
+            ),
+            $custom-options: (
+                ".g--card-33__wrapper__list-group__item": (
+                    border-radius: 0px,
+                    background-color: transparent,
+                    border-color: transparent,
+                ),
+            )
+        );
+    }
+
+    &--fifth {
+        @include make-card-33-modifier(
+            $background-options: (
+                "background-color": #fff7ee,
+            ),
+            $border-options: (
+                "border-color": #000,
+                "border-width": 0 0 6px 0,
+                "border-style": solid,
+                "border-radius": 0,
+            ),
+            $shadow-options: (
+                box-shadow: none,
+            ),
+            $media-options: (
+                "aspect-ratio": 4 3,
+                "object-fit": cover,
+                "object-position": center,
+            ),
+            $item-primary-options: (
+                "text-class": f--font-d,
+                "text-decoration": underline,
+                "text-decoration-position": under,
+                "color": map-get($color-options, a),
+            ),
+            $item-secondary-options: (
+                "text-class": f--font-f,
+                "color": map-get($color-options, a),
+            ),
+            $item-tertiary-options: (
+                "color": map-get($color-options, a),
+                "font-weight": 400,
+            ),
+            $item-tertiary-hover-options: (
+                "border-radius": 100px,
+                "background-color": transparent,
+                "border-color": map-get($color-options, a),
+                "color": map-get($color-options, a),
+            ),
+            $custom-options: (
+                ".g--card-33__wrapper__list-group__item": (
+                    border-radius: 100px,
+                    background-color: transparent,
+                    border-color: map-get($color-options, a),
+                ),
+            )
+        );
+    }
+
+    &--sixth {
+        @include make-card-33-modifier(
+            $card-options: (
+                "align": center,
+            ),
+            $background-options: (
+                "background-color": #ffd600,
+            ),
+            $border-options: (
+                // "border-color": tomato,
+                // "border-width": 2px 4px,
+                // "border-style": solid,
+                "border-radius": 0 0 90x 90px,
+            ),
+            $shadow-options: (
+                box-shadow: none,
+            ),
+            $media-options: (
+                "background-color": #ffd600,
+                "aspect-ratio": 3 2,
+                // "width": 50%,
+                // "object-fit": cover,
+                "border-radius": 0 0 90px 90px,
+                "object-position": center,
+            ),
+            $media-hover-options: (
+                // "transform": scale(1.5),
+            ),
+            $item-primary-options: (
+                "text-class": f--font-d,
+                "text-decoration": none,
+                "color": map-get($color-options, a),
+                "font-weight": 600,
+            ),
+            $item-secondary-options: (
+                "text-class": f--font-f,
+                "color": map-get($color-options, a),
+            ),
+            $item-tertiary-options: (
+                "color": map-get($color-options, a),
+                "text-decoration": underline,
+                "text-decoration-color": map-get($color-options, a),
+            ),
+            $item-tertiary-hover-options: (
+                "border-radius": 0,
+                "background-size": (
+                    0,
+                    0,
+                ),
+                "background-color": transparent,
+                "border-color": transparent,
+                "text-decoration-color": transparent,
+                "color": map-get($color-options, a),
+            ),
+            $custom-options: (
+                ".g--card-33__wrapper__list-group__item": (
+                    border-radius: 0px,
+                    background-color: transparent,
+                    border-color: transparent,
+                ),
+            )
         );
     }
 }
