@@ -4,7 +4,7 @@
         $cta-options: (
             // "container": yes,
             "container": (f--col-6, f--col-tablets-12),
-            // "align": center,,,,,,,,
+            // "align": center
         ),
         $background-options: (
             "background-image": url("../assets/bg.jpeg"),
@@ -106,14 +106,14 @@
             $item-secondary-options: (
                 "text-class": g--btn-01--tenth,
             ),
-            // $item-secondary-hover-options: (
-            //     "border-radius": 0px,
-            //     "background-size": (
-            //         100%,
-            //     ),
-            //     "color": #ffffff,
-            //     "border-color": #007cad,
-            // ),
+            $item-secondary-hover-options: (
+                "border-radius": 0px,
+                "background-size": (
+                    100%,
+                ),
+                "color": #ffffff,
+                "border-color": #007cad,
+            ),
             $item-secondary-list-options: (
                 1: (
                     "text-class": g--btn-01--tenth,
@@ -151,6 +151,106 @@
             $item-secondary-list-options: (
                 1: (
                     "text-class": g--btn-01--third,
+                ),
+            )
+        );
+    }
+
+    &--fifth {
+        @include make-cta-01-modifier(
+            $cta-options: (
+                "container": (
+                    f--col-10,
+                    f--col-tablets-12,
+                ),
+                "align": center,
+            ),
+            $background-options: (
+                "background-image": (
+                    url("../assets/noise.png"),
+                    linear-gradient(226deg, #ff5cea 0%, #8221ea 100%),
+                ),
+                "background-repeat": (
+                    repeat,
+                    no-repeat,
+                ),
+                "background-size": (
+                    auto,
+                    cover,
+                ),
+                "background-position": (
+                    center,
+                    center,
+                ),
+                "background-color": transparent,
+                "background-overlay": (
+                    "background-color": rgba(map-get($color-options, a), 0.2),
+                ),
+            ),
+            $item-primary-options: (
+                "text-class": f--font-b,
+                "color": map-get($color-options, b),
+            ),
+            $item-secondary-list-options: (
+                1: (
+                    "text-class": g--btn-01--fifteenth,
+                ),
+                2: (
+                    "text-class": g--btn-01--sixteenth,
+                    "color": map-get($color-options, b),
+                ),
+            ),
+            $custom-options: (
+                ".g--cta-01__wrapper__content__list-group__item:nth-child(2)": (
+                    padding: 0.5rem 1.5rem,
+                ),
+            )
+        );
+    }
+
+    &--sixth {
+        @include make-cta-01-modifier(
+            $cta-options: (
+                // "container": yes,
+                "container": (f--col-6, f--col-tablets-12),
+                // "align": center
+            ),
+            $background-options: (
+                "background-image": (
+                    url("../assets/vector-v.svg"),
+                    url("../assets/cta.png"),
+                ),
+                "background-repeat": no-repeat,
+                "background-size": (
+                    contain,
+                    cover,
+                ),
+                "background-position": (
+                    right,
+                    center,
+                ),
+                "background-color": map-get($color-options, e),
+                "background-overlay": (
+                    "background-color": transparent,
+                    "background-image":
+                        linear-gradient(
+                            0deg,
+                            rgba(26, 25, 29, 0.57) 0%,
+                            rgba(26, 25, 29, 0.57) 100%
+                        ),
+                    "background-size": cover,
+                    "background-position": center,
+                ),
+            ),
+            $item-primary-options: (
+                "font-size": 48px,
+                "font-weight": 400,
+                "line-height": 130%,
+                "color": map-get($color-options, b),
+            ),
+            $item-secondary-list-options: (
+                1: (
+                    "text-class": g--btn-01--seventeenth,
                 ),
             )
         );
