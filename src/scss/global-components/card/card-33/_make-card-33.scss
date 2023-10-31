@@ -138,8 +138,7 @@
     }
 
     @media all and (hover: hover) {
-        &:hover,
-        &:active {
+        &:hover {
             @include make-hover-interaction($options: $hover-options);
             .g--card-33 {
                 &__media-wrapper {

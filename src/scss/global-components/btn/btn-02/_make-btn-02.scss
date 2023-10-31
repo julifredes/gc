@@ -38,8 +38,7 @@
     }
 
     @media all and (hover: hover) {
-        &:hover,
-        &:active {
+        &:hover {
             @include make-hover-interaction($options: $hover-options);
             .g--btn-02 {
                 &__artwork {
